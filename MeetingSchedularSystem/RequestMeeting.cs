@@ -21,5 +21,15 @@ namespace MeetingSchedularSystem
     {
 
     }
+
+    private void label1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void newMeetingLabel_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 }

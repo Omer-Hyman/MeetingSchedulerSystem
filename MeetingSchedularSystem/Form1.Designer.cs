@@ -62,7 +62,7 @@
       this.pendingMeetingsList.Name = "pendingMeetingsList";
       this.pendingMeetingsList.RowCount = 1;
       this.pendingMeetingsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-      this.pendingMeetingsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.pendingMeetingsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 157F));
       this.pendingMeetingsList.Size = new System.Drawing.Size(425, 159);
       this.pendingMeetingsList.TabIndex = 8;
       this.pendingMeetingsList.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
@@ -109,7 +109,7 @@
       this.scheduledMeetingsList.Name = "scheduledMeetingsList";
       this.scheduledMeetingsList.RowCount = 1;
       this.scheduledMeetingsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-      this.scheduledMeetingsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.scheduledMeetingsList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 296F));
       this.scheduledMeetingsList.Size = new System.Drawing.Size(225, 298);
       this.scheduledMeetingsList.TabIndex = 11;
       // 
@@ -168,6 +168,7 @@
       this.Controls.Add(this.newMeeting);
       this.Name = "mainUI";
       this.Text = "Meetings Schedular System";
+      this.Load += new System.EventHandler(this.mainUI_Load);
       this.pendingMeetingsList.ResumeLayout(false);
       this.pendingMeetingsList.PerformLayout();
       this.scheduledMeetingsList.ResumeLayout(false);
