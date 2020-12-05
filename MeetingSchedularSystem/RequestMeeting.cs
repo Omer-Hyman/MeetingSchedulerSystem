@@ -31,5 +31,18 @@ namespace MeetingSchedularSystem
     {
 
     }
+
+    private void label1_Click_1(object sender, EventArgs e)
+    {
+
+    }
+
+    private void cancelMeetingButton_Click(object sender, EventArgs e)
+    {
+      this.Hide();
+      Form mainUI = new mainUI();
+      mainUI.Show();
+
+    }
   }
 }
