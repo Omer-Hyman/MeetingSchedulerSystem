@@ -37,7 +37,7 @@
       this.submitMeetingButton = new System.Windows.Forms.Button();
       this.equipmentLabel = new System.Windows.Forms.Label();
       this.cancelMeetingButton = new System.Windows.Forms.Button();
-      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.equipmentList = new System.Windows.Forms.ComboBox();
       this.timePicker = new System.Windows.Forms.DateTimePicker();
       this.timeLabel = new System.Windows.Forms.Label();
       this.meetingNameLabel = new System.Windows.Forms.Label();
@@ -138,17 +138,17 @@
       this.cancelMeetingButton.UseVisualStyleBackColor = true;
       this.cancelMeetingButton.Click += new System.EventHandler(this.cancelMeetingButton_Click);
       // 
-      // comboBox1
+      // equipmentList
       // 
-      this.comboBox1.FormattingEnabled = true;
-      this.comboBox1.Items.AddRange(new object[] {
+      this.equipmentList.FormattingEnabled = true;
+      this.equipmentList.Items.AddRange(new object[] {
             "Projector",
             "Whiteboard",
             "Desktop"});
-      this.comboBox1.Location = new System.Drawing.Point(41, 194);
-      this.comboBox1.Name = "comboBox1";
-      this.comboBox1.Size = new System.Drawing.Size(206, 24);
-      this.comboBox1.TabIndex = 12;
+      this.equipmentList.Location = new System.Drawing.Point(41, 194);
+      this.equipmentList.Name = "equipmentList";
+      this.equipmentList.Size = new System.Drawing.Size(206, 24);
+      this.equipmentList.TabIndex = 12;
       // 
       // timePicker
       // 
@@ -195,7 +195,7 @@
       this.Controls.Add(this.meetingNameLabel);
       this.Controls.Add(this.timeLabel);
       this.Controls.Add(this.timePicker);
-      this.Controls.Add(this.comboBox1);
+      this.Controls.Add(this.equipmentList);
       this.Controls.Add(this.cancelMeetingButton);
       this.Controls.Add(this.equipmentLabel);
       this.Controls.Add(this.submitMeetingButton);
@@ -222,7 +222,7 @@
     private System.Windows.Forms.Button submitMeetingButton;
     private System.Windows.Forms.Label equipmentLabel;
     private System.Windows.Forms.Button cancelMeetingButton;
-    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.ComboBox equipmentList;
     private System.Windows.Forms.DateTimePicker timePicker;
     private System.Windows.Forms.Label timeLabel;
     private System.Windows.Forms.Label meetingNameLabel;

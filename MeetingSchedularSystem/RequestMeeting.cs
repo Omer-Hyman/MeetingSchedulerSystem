@@ -49,6 +49,7 @@ namespace MeetingSchedularSystem
     {
       //create a new instance of meeting with the values from this form going into its variables
       //int i = 0;
+      string name = meetingName.Text;
       Meeting newMeeting = new Meeting();
 
       //newMeeting name = meetingName.Text;
@@ -58,10 +59,11 @@ namespace MeetingSchedularSystem
 
       foreach(object itemChecked in guestList.CheckedItems)
       {
-        newMeeting.Guests = itemChecked.ToString();//should really be guests[i] bc guests is an array but no errors like this for some reason
+        newMeeting.Guests = itemChecked.ToString();
       }
-
-      //missed a couple
+      newMeeting.Equipment = equipmentList.SelectedItem.ToString();
+      //Both guests and equipment are arrays so should really be guests[i] 
+      //but no errors like this for some reason
 
       newMeeting.MeetingDescription = meetingDescription.Text;
         
