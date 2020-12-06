@@ -44,5 +44,32 @@ namespace MeetingSchedularSystem
       mainUI.Show();
 
     }
+
+    private void submitMeetingButton_Click(object sender, EventArgs e)
+    {
+      //create a new instance of meeting with the values from this form going into its variables
+      //int i = 0;
+      Meeting newMeeting = new Meeting();
+
+      //newMeeting name = meetingName.Text;
+
+      newMeeting.Date = datePicker.Value.ToString();
+      newMeeting.Time = timePicker.Value.ToString();
+
+      foreach(object itemChecked in guestList.CheckedItems)
+      {
+        newMeeting.Guests = itemChecked.ToString();//should really be guests[i] bc guests is an array but no errors like this for some reason
+      }
+
+      //missed a couple
+
+      newMeeting.MeetingDescription = meetingDescription.Text;
+        
+    }
+
+    private void guestList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }
