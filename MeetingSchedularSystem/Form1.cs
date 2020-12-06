@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
 
 namespace MeetingSchedularSystem
 {
@@ -61,12 +60,5 @@ namespace MeetingSchedularSystem
     {
 
     }
-
-        private void scheduledMeetingPlaceholder_Click(object sender, EventArgs e)
-        {
-            ScheduledMeetings scheduled = new ScheduledMeetings();
-            scheduled.ShowDialog();
-
-        }
-    }
+  }
 }
