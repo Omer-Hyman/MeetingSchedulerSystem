@@ -59,6 +59,18 @@ namespace MeetingSchedularSystem
     private void mainUI_Load(object sender, EventArgs e)
     {
 
+        }
+    private void scheduledMeetingPlaceholder_Click(object sender, EventArgs e)
+     {
+
+
+     }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ScheduledMeetings scheduled = new ScheduledMeetings();
+            scheduled.Show();
+
+        }
     }
-  }
 }
