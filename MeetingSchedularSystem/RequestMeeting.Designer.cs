@@ -36,19 +36,21 @@
       this.descriptionLabel = new System.Windows.Forms.Label();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.submitMeetingButton = new System.Windows.Forms.Button();
-      this.equipmentList = new System.Windows.Forms.CheckedListBox();
       this.equipmentLabel = new System.Windows.Forms.Label();
       this.cancelMeetingButton = new System.Windows.Forms.Button();
+      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.timePicker = new System.Windows.Forms.DateTimePicker();
+      this.timeLabel = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // datePicker
       // 
       this.datePicker.AllowDrop = true;
-      this.datePicker.CustomFormat = "dd/MM/yyyy        hh:mm";
-      this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+      this.datePicker.CustomFormat = "";
+      this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this.datePicker.Location = new System.Drawing.Point(40, 96);
       this.datePicker.Name = "datePicker";
-      this.datePicker.Size = new System.Drawing.Size(206, 22);
+      this.datePicker.Size = new System.Drawing.Size(110, 22);
       this.datePicker.TabIndex = 1;
       this.datePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
       // 
@@ -123,18 +125,6 @@
       this.submitMeetingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.submitMeetingButton.UseVisualStyleBackColor = true;
       // 
-      // equipmentList
-      // 
-      this.equipmentList.FormattingEnabled = true;
-      this.equipmentList.Items.AddRange(new object[] {
-            "Projector",
-            "Whiteboard",
-            "Desktop"});
-      this.equipmentList.Location = new System.Drawing.Point(40, 164);
-      this.equipmentList.Name = "equipmentList";
-      this.equipmentList.Size = new System.Drawing.Size(206, 21);
-      this.equipmentList.TabIndex = 10;
-      // 
       // equipmentLabel
       // 
       this.equipmentLabel.AutoSize = true;
@@ -155,13 +145,45 @@
       this.cancelMeetingButton.UseVisualStyleBackColor = true;
       this.cancelMeetingButton.Click += new System.EventHandler(this.cancelMeetingButton_Click);
       // 
+      // comboBox1
+      // 
+      this.comboBox1.FormattingEnabled = true;
+      this.comboBox1.Items.AddRange(new object[] {
+            "Projector",
+            "Whiteboard",
+            "Desktop"});
+      this.comboBox1.Location = new System.Drawing.Point(40, 161);
+      this.comboBox1.Name = "comboBox1";
+      this.comboBox1.Size = new System.Drawing.Size(206, 24);
+      this.comboBox1.TabIndex = 12;
+      // 
+      // timePicker
+      // 
+      this.timePicker.CustomFormat = "hh:mm";
+      this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+      this.timePicker.Location = new System.Drawing.Point(166, 96);
+      this.timePicker.Name = "timePicker";
+      this.timePicker.Size = new System.Drawing.Size(79, 22);
+      this.timePicker.TabIndex = 13;
+      // 
+      // timeLabel
+      // 
+      this.timeLabel.AutoSize = true;
+      this.timeLabel.Location = new System.Drawing.Point(163, 65);
+      this.timeLabel.Name = "timeLabel";
+      this.timeLabel.Size = new System.Drawing.Size(43, 17);
+      this.timeLabel.TabIndex = 14;
+      this.timeLabel.Text = "Time:";
+      // 
       // RequestMeeting
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(488, 414);
+      this.Controls.Add(this.timeLabel);
+      this.Controls.Add(this.timePicker);
+      this.Controls.Add(this.comboBox1);
       this.Controls.Add(this.cancelMeetingButton);
-      this.Controls.Add(this.equipmentList);
       this.Controls.Add(this.equipmentLabel);
       this.Controls.Add(this.submitMeetingButton);
       this.Controls.Add(this.textBox1);
@@ -187,8 +209,10 @@
     private System.Windows.Forms.Label descriptionLabel;
     private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Button submitMeetingButton;
-    private System.Windows.Forms.CheckedListBox equipmentList;
     private System.Windows.Forms.Label equipmentLabel;
     private System.Windows.Forms.Button cancelMeetingButton;
+    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.DateTimePicker timePicker;
+    private System.Windows.Forms.Label timeLabel;
   }
 }
