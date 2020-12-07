@@ -25,5 +25,10 @@ namespace MeetingSchedularSystem {
         {
 
         }
+
+    private void ScheduledMeetings_Load(object sender, EventArgs e)
+    {
+
     }
+  }
 }
