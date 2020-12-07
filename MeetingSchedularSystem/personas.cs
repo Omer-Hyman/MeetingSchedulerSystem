@@ -10,7 +10,7 @@ namespace MeetingSchedularSystem
   {
     public string name;
     private int importanceLevel;
-    private bool initiator;
+    public bool initiator;
     public HashSet<MeetingSlot> preferenceSet;
     public HashSet<MeetingSlot> exclusionSet;
 
@@ -22,7 +22,7 @@ namespace MeetingSchedularSystem
     {
       name = Name;
       importanceLevel = Importance;
-      initiator = Initiator;
+      this.initiator = initiator;
       this.preferenceSet = new HashSet<MeetingSlot>();
       this.exclusionSet = new HashSet<MeetingSlot>();
 
@@ -33,19 +33,19 @@ namespace MeetingSchedularSystem
     public void addToPSet(MeetingSlot meetingS)
     {
             if(this.exclusionSet.Contains(meetingS))
-                throw new MS_Exception("Slot is in the exclusion set." + (object) meetingS, this);
+                throw new MSlotException("Slot is in the exclusion set." + (object) meetingS, this);
             this.preferenceSet.Add(meetingS);
     }
 
     public void addToESet(MeetingSlot meetingS)
     {
             if(this.preferenceSet.Contains(meetingS))
-                throw new MS_Exception("Slot already in pref set" + (object) meetingS, this);
+                throw new MSlotException("Slot already in pref set" + (object) meetingS, this);
             this.preferenceSet.Add(meetingS);
     }
 
     public bool MSInPSet(MeetingSlot meetingS) => this.preferenceSet.Contains(meetingS);
-    public bool MSINESet(MeetingSlot meetingS) => this.exclusionSet.Contains(meetingS);
+    public bool MSInESet(MeetingSlot meetingS) => this.exclusionSet.Contains(meetingS);
     //public Personas()
     //{
    //  name = "Fname Lname";

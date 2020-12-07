@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MS.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +61,7 @@
     <Compile Include="MeetingHistory.Designer.cs">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="MSlotException.cs" />
     <Compile Include="personas.cs" />
     <Compile Include="PersonaSelect.cs">
       <SubType>Form</SubType>
@@ -81,7 +83,9 @@
     <Compile Include="ScheduledMeetings.Designer.cs">
       <DependentUpon>ScheduledMeetings.cs</DependentUpon>
     </Compile>
+    <Compile Include="StrongConflictError.cs" />
     <Compile Include="Users.cs" />
+    <Compile Include="WeakConflictError.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

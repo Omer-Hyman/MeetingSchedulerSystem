@@ -15,6 +15,8 @@ namespace MeetingSchedularSystem
 
   public partial class mainUI : Form
   {
+    private Meeting meeting;
+    private TextBox meetingInitiator;
     public mainUI()
     {
       InitializeComponent();

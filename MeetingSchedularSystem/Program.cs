@@ -20,11 +20,11 @@ namespace MeetingSchedularSystem
       Application.SetCompatibleTextRenderingDefault(false);
       Application.Run(new mainUI());
 
-      Personas mehmet = new Personas("Mehmet Ozcan", 2);
-      Personas heather = new Personas("Heather McLean", 3);
-      Personas liam = new Personas("Liam Williams", 1);
-      Personas sam = new Personas("Sam Scott", 5);
-      Personas rosalia = new Personas("Rosalia Cortez", 4);
+      Personas mehmet = new Personas("Mehmet Ozcan", 2, false);
+      Personas heather = new Personas("Heather McLean", 3, false);
+      Personas liam = new Personas("Liam Williams", 1, true);
+      Personas sam = new Personas("Sam Scott", 5, false);
+      Personas rosalia = new Personas("Rosalia Cortez", 4, false);
     }
   }
 }
