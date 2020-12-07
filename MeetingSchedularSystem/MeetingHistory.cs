@@ -34,7 +34,8 @@ namespace WindowsFormsApp2
             string[] possibles = { "Rosalia Cortez", "Heather McLean", "Sam Scott" };
             string[] potentialEquipment = { "Printer", "Big Screen", "Projector" };
             DateTime timeDate = new DateTime(2020, 3, 1, 7, 0, 0);
-            meetingSource1.Add(new Meeting("Liam Williams", possibles, timeDate, potentialEquipment, "this is a test meeting", UserType.Five));
+
+            //meetingSource1.Add(new Meeting("Liam Williams", possibles, timeDate, potentialEquipment, "this is a test meeting", UserType.Five));
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.AutoSize = true;
             dataGridView2.DataSource = meetingSource1;
@@ -80,111 +81,7 @@ namespace WindowsFormsApp2
 
         }
 
-        // this is the class that will ultimately define meeting. Could be put back in its own file but want to get this implementation working first
-
-        private class Meeting
-        {
-            // attributes
-            private string meetingInitiator;
-            private DateTime timeDate;
-            private string[] guests;
-            private string[] equipment;
-            private string meetingDescription;
-            private UserType importanceLevel;
-            public Meeting(string initiator, string[] possibleGuests, DateTime date, string[] Equipment, string description, UserType type)
-            {
-                // constructor
-                meetingInitiator = initiator;
-                guests = possibleGuests;
-                timeDate = date;
-                equipment = Equipment;
-                meetingDescription = description;
-                importanceLevel = type;
-
-
-
-            }
-            public Meeting()
-            {
-                meetingInitiator = "<enter name>";
-                //DateTime timeDate = new DateTime(2020, 3, 1, 7, 0, 0);
-                meetingDescription = "";
-                importanceLevel = UserType.Five;
-
-            }
-
-         
-            // working getters and setters for every attribute
-            public string Initiator
-            {
-                get
-                {
-                    return meetingInitiator;
-                }
-                set
-                {
-                    meetingInitiator = value;
-                }
-            }
-            public String[] Guests
-            {
-                get
-                {
-                    return guests;
-                }
-                set
-                {
-                    guests = value;
-                }
-            }
-            public DateTime Date
-            {
-                get
-                {
-                    return timeDate;
-                }
-                set
-                {
-                    timeDate = value;
-                }
-            }
-            
-            public String[] Equipment
-            {
-                get
-                {
-                    return equipment;
-                }
-                set
-                {
-                    equipment = value;
-                }
-            }
-
-            public string Description
-            {
-                get
-                {
-                    return meetingDescription;
-                }
-                set
-                {
-                    meetingDescription = value;
-                }
-            }
-
-            public UserType Importance
-            {
-                get
-                {
-                    return importanceLevel;
-                }
-                set
-                {
-                    importanceLevel = value;
-                }
-            }
-
-        }
-    }
+    // this is the class that will ultimately define meeting. Could be put back in its own file but want to get this implementation working first
+    
+  }
 }

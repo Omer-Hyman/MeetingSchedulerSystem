@@ -53,11 +53,19 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Location.cs" />
+    <Compile Include="Meeting.cs" />
     <Compile Include="MeetingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MeetingHistory.Designer.cs">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personas.cs" />
+    <Compile Include="PersonaSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonaSelect.Designer.cs">
+      <DependentUpon>PersonaSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MeetingHistory.resx">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonaSelect.resx">
+      <DependentUpon>PersonaSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

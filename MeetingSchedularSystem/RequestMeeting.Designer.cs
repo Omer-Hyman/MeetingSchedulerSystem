@@ -37,7 +37,6 @@
       this.submitMeetingButton = new System.Windows.Forms.Button();
       this.equipmentLabel = new System.Windows.Forms.Label();
       this.cancelMeetingButton = new System.Windows.Forms.Button();
-      this.timePicker = new System.Windows.Forms.DateTimePicker();
       this.timeLabel = new System.Windows.Forms.Label();
       this.meetingNameLabel = new System.Windows.Forms.Label();
       this.meetingName = new System.Windows.Forms.TextBox();
@@ -51,7 +50,7 @@
       this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
       this.datePicker.Location = new System.Drawing.Point(38, 120);
       this.datePicker.Name = "datePicker";
-      this.datePicker.Size = new System.Drawing.Size(110, 22);
+      this.datePicker.Size = new System.Drawing.Size(205, 22);
       this.datePicker.TabIndex = 1;
       this.datePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
       // 
@@ -138,17 +137,6 @@
       this.cancelMeetingButton.UseVisualStyleBackColor = true;
       this.cancelMeetingButton.Click += new System.EventHandler(this.cancelMeetingButton_Click);
       // 
-      // timePicker
-      // 
-      this.timePicker.CustomFormat = "hh:mm";
-      this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-      this.timePicker.Location = new System.Drawing.Point(164, 120);
-      this.timePicker.Name = "timePicker";
-      this.timePicker.ShowUpDown = true;
-      this.timePicker.Size = new System.Drawing.Size(79, 22);
-      this.timePicker.TabIndex = 13;
-      this.timePicker.Value = new System.DateTime(2020, 12, 6, 21, 51, 0, 0);
-      // 
       // timeLabel
       // 
       this.timeLabel.AutoSize = true;
@@ -198,7 +186,6 @@
       this.Controls.Add(this.meetingName);
       this.Controls.Add(this.meetingNameLabel);
       this.Controls.Add(this.timeLabel);
-      this.Controls.Add(this.timePicker);
       this.Controls.Add(this.cancelMeetingButton);
       this.Controls.Add(this.equipmentLabel);
       this.Controls.Add(this.submitMeetingButton);
@@ -225,7 +212,6 @@
     private System.Windows.Forms.Button submitMeetingButton;
     private System.Windows.Forms.Label equipmentLabel;
     private System.Windows.Forms.Button cancelMeetingButton;
-    private System.Windows.Forms.DateTimePicker timePicker;
     private System.Windows.Forms.Label timeLabel;
     private System.Windows.Forms.Label meetingNameLabel;
     private System.Windows.Forms.TextBox meetingName;

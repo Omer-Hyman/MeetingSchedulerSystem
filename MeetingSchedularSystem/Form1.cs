@@ -23,16 +23,18 @@ namespace MeetingSchedularSystem
     private void button1_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form requestMeeting = new RequestMeeting();
-      requestMeeting.Show();
+      Form persona = new PersonaSelect();
+      persona.Show();
+
+
     }
 
     private void historyButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form meetingHistory = new MeetingHistory();
-            meetingHistory.Show();
-        }
+    {
+      this.Hide();
+      Form meetingHistory = new MeetingHistory();
+      meetingHistory.Show();
+    }
 
     private void textBox1_TextChanged(object sender, EventArgs e)
     {
@@ -67,18 +69,23 @@ namespace MeetingSchedularSystem
     private void mainUI_Load(object sender, EventArgs e)
     {
 
-        }
-    private void scheduledMeetingPlaceholder_Click(object sender, EventArgs e)
-     {
-
-
-     }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            ScheduledMeetings scheduled = new ScheduledMeetings();
-            scheduled.Show();
-
-        }
     }
+    private void scheduledMeetingPlaceholder_Click(object sender, EventArgs e)
+    {
+
+
+    }
+
+    private void button1_Click_1(object sender, EventArgs e)
+    {
+      ScheduledMeetings scheduled = new ScheduledMeetings();
+      scheduled.Show();
+
+    }
+
+    private void historyButton_Click_1(object sender, EventArgs e)
+    {
+
+    }
+  }
 }
