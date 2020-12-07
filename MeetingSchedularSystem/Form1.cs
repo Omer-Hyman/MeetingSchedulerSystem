@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp2;
 
 namespace MeetingSchedularSystem
 {
@@ -25,6 +26,13 @@ namespace MeetingSchedularSystem
       Form requestMeeting = new RequestMeeting();
       requestMeeting.Show();
     }
+
+    private void historyButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form meetingHistory = new MeetingHistory();
+            meetingHistory.Show();
+        }
 
     private void textBox1_TextChanged(object sender, EventArgs e)
     {

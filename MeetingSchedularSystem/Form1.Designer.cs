@@ -35,7 +35,7 @@
             this.scheduledMeetings = new System.Windows.Forms.Label();
             this.scheduledMeetingsList = new System.Windows.Forms.TableLayoutPanel();
             this.scheduledMeetingPlaceholder = new System.Windows.Forms.Label();
-            this.meetingHistory = new System.Windows.Forms.Button();
+            this.historyButton = new System.Windows.Forms.Button();
             this.userName = new System.Windows.Forms.Label();
             this.switchUser = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -133,15 +133,15 @@
             this.scheduledMeetingPlaceholder.TabIndex = 0;
             this.scheduledMeetingPlaceholder.Text = "Meeting";
             // 
-            // meetingHistory
+            // historyButton
             // 
-            this.meetingHistory.Location = new System.Drawing.Point(483, 169);
-            this.meetingHistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.meetingHistory.Name = "meetingHistory";
-            this.meetingHistory.Size = new System.Drawing.Size(231, 80);
-            this.meetingHistory.TabIndex = 12;
-            this.meetingHistory.Text = "Meeting History";
-            this.meetingHistory.UseVisualStyleBackColor = true;
+            this.historyButton.Location = new System.Drawing.Point(483, 169);
+            this.historyButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.historyButton.Name = "historyButton";
+            this.historyButton.Size = new System.Drawing.Size(231, 80);
+            this.historyButton.TabIndex = 12;
+            this.historyButton.Text = "Meeting History";
+            this.historyButton.UseVisualStyleBackColor = true;
             // 
             // userName
             // 
@@ -166,11 +166,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(788, 601);
+            this.button1.Location = new System.Drawing.Point(76, 601);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(338, 91);
+            this.button1.Size = new System.Drawing.Size(1050, 91);
             this.button1.TabIndex = 16;
-            this.button1.Text = "show more";
+            this.button1.Text = "show all pending and scheduled meetings";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -182,7 +182,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.switchUser);
             this.Controls.Add(this.userName);
-            this.Controls.Add(this.meetingHistory);
+            this.Controls.Add(this.historyButton);
             this.Controls.Add(this.scheduledMeetingsList);
             this.Controls.Add(this.scheduledMeetings);
             this.Controls.Add(this.pendingMeetings);
@@ -210,7 +210,7 @@
     private System.Windows.Forms.Label scheduledMeetings;
     private System.Windows.Forms.TableLayoutPanel scheduledMeetingsList;
     private System.Windows.Forms.Label scheduledMeetingPlaceholder;
-    private System.Windows.Forms.Button meetingHistory;
+    private System.Windows.Forms.Button historyButton;
     private System.Windows.Forms.Label userName;
     private System.Windows.Forms.Button switchUser;
         private System.Windows.Forms.Button button1;
