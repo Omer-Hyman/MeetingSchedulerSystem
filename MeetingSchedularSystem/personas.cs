@@ -6,29 +6,56 @@ using System.Threading.Tasks;
 
 namespace MeetingSchedularSystem
 {
-  class Personas
+  internal class Personas
   {
-    private string name;
+    public string name;
     private int importanceLevel;
     private bool initiator;
+    public HashSet<MeetingSlot> preferenceSet;
+    public HashSet<MeetingSlot> exclusionSet;
 
-    public Personas(string Name, int Importance)
+    // preference and exclusion sets could go here, probably as hashsets. the idea would be for a class to handle meeting 'instances'
+    // so hashset of type 'MeetingInstance'
+
+
+    public Personas(string Name, int Importance, bool initiator)
     {
       name = Name;
       importanceLevel = Importance;
       initiator = Initiator;
-    }
+      this.preferenceSet = new HashSet<MeetingSlot>();
+      this.exclusionSet = new HashSet<MeetingSlot>();
 
-    public Personas()
+            // would pass each individual's preference, exclusions here
+
+    }
+    
+    public void addToPSet(MeetingSlot meetingS)
     {
-      name = "Fname Lname";
-      importanceLevel = 5;
-      initiator = false;
-
+            if(this.exclusionSet.Contains(meetingS))
+                throw new MS_Exception("Slot is in the exclusion set." + (object) meetingS, this);
+            this.preferenceSet.Add(meetingS);
     }
 
-    public string Name { get; set; }
-    public int Importance { get; set; }
-    public bool Initiator { get; set; }
+    public void addToESet(MeetingSlot meetingS)
+    {
+            if(this.preferenceSet.Contains(meetingS))
+                throw new MS_Exception("Slot already in pref set" + (object) meetingS, this);
+            this.preferenceSet.Add(meetingS);
+    }
+
+    public bool MSInPSet(MeetingSlot meetingS) => this.preferenceSet.Contains(meetingS);
+    public bool MSINESet(MeetingSlot meetingS) => this.exclusionSet.Contains(meetingS);
+    //public Personas()
+    //{
+   //  name = "Fname Lname";
+   //   importanceLevel = 5;
+   //   initiator = false;
+
+   // }
+
+    //public string Name { get; set; }
+    //public int Importance { get; set; }
+    //public bool Initiator { get; set; }
   }
 }

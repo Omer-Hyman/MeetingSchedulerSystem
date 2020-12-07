@@ -26,7 +26,7 @@ namespace MeetingSchedularSystem
 
   }*/
 
-  class Meeting
+ internal class Meeting
   {
 
 
@@ -39,6 +39,7 @@ namespace MeetingSchedularSystem
     private string meetingDescription;
     private string location;
     private UserType importanceLevel;
+    private HashSet<Personas> personas;
     public Meeting(string meetingTitle, string initiator, string[] possibleGuests, DateTime date, string[] Equipment, string description, string meetingLocation, UserType type)
     {
       // constructor
@@ -60,6 +61,13 @@ namespace MeetingSchedularSystem
       meetingDescription = "";
       importanceLevel = UserType.Five;
 
+    }
+    public List <MeetingSlot> GetMeetingSlots() => new List<MeetingSlot>();
+
+    public MeetingSlot findTopSlot()
+    {
+
+        
     }
     // working getters and setters for every attribute
     public string Initiator
