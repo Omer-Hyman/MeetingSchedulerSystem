@@ -96,6 +96,7 @@
       <DependentUpon>ScheduledMeetings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Meeting.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp2.MeetingHistory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

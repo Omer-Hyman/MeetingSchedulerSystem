@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
             string[] possibles = { "Rosalia Cortez", "Heather McLean", "Sam Scott" };
             string[] potentialEquipment = { "Printer", "Big Screen", "Projector" };
             DateTime timeDate = new DateTime(2020, 3, 1, 7, 0, 0);
-            meetingSource1.Add(new Meeting("Liam Williams", possibles, timeDate, potentialEquipment, "this is a test meeting", UserType.Five));
+            meetingSource1.Add(new Meeting("Liam Williams", possibles, timeDate, potentialEquipment, "this is a test meeting", UserType.Five, "Room 101"));
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.AutoSize = true;
             dataGridView2.DataSource = meetingSource1;
@@ -91,7 +91,8 @@ namespace WindowsFormsApp2
             private string[] equipment;
             private string meetingDescription;
             private UserType importanceLevel;
-            public Meeting(string initiator, string[] possibleGuests, DateTime date, string[] Equipment, string description, UserType type)
+            private string location_input;
+            public Meeting(string initiator, string[] possibleGuests, DateTime date, string[] Equipment, string description, UserType type, string location)
             {
                 // constructor
                 meetingInitiator = initiator;
@@ -100,7 +101,7 @@ namespace WindowsFormsApp2
                 equipment = Equipment;
                 meetingDescription = description;
                 importanceLevel = type;
-
+                location_input = location;
 
 
             }
@@ -184,6 +185,22 @@ namespace WindowsFormsApp2
                     importanceLevel = value;
                 }
             }
+            public string Location
+            {
+                get
+                {
+                    return location_input;
+                }
+                set
+                {
+                    location_input = value;
+                }
+            }
+
+        }
+
+        private void MeetingHistory_Load_1(object sender, EventArgs e)
+        {
 
         }
     }
