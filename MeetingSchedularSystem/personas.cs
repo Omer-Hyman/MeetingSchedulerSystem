@@ -12,7 +12,7 @@ namespace MeetingSchedularSystem
     private int importanceLevel;
     private bool initiator;
 
-    public Personas(string Name, int Importance)
+    public Personas(string Name, int Importance, bool initiator)
     {
       name = Name;
       importanceLevel = Importance;
@@ -29,6 +29,20 @@ namespace MeetingSchedularSystem
 
     public string Name { get; set; }
     public int Importance { get; set; }
-    public bool Initiator { get; set; }
+    public bool Initiator { get; set;
+    }
+
+    public void toggleInitiator()
+    {
+      if (initiator)
+      {
+        initiator = false;
+      }
+      else
+      {
+        initiator = true;
+      }
+    }
+    }
   }
-}
+

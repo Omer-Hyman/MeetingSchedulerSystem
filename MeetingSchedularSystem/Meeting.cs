@@ -117,9 +117,7 @@ namespace MeetingSchedularSystem
         meetingDescription = value;
       }
     }
-
     public string Title { get; set; }
-
     public UserType Importance
     {
       get

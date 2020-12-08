@@ -15,12 +15,21 @@ namespace MeetingSchedularSystem
     public PersonaSelect()
     {
       InitializeComponent();
-    }
 
+      Personas mehmet = new Personas("Mehmet Ozcan", 2, false);
+      Personas heather = new Personas("Heather McLean", 3, false);
+      Personas liam = new Personas("Liam Williams", 1, false);
+      Personas sam = new Personas("Sam Scott", 5, false);
+      Personas rosalia = new Personas("Rosalia Cortez", 4, false);
+    }
+    public string initiator()
+    {
+      return this.Text;
+    }
     private void user5_Click(object sender, EventArgs e)
     {
       this.Hide();
-      //newMeeting.initiator = "Rosalia Cortez";
+      initiator();
       Form meetingRequest = new RequestMeeting();
       meetingRequest.Show();
     }
@@ -28,7 +37,7 @@ namespace MeetingSchedularSystem
     private void user1_Click(object sender, EventArgs e)
     {
       this.Hide();
-      //newMeeting.initiator = "Mehmet Ozcan";
+      
       Form meetingRequest = new RequestMeeting();
       meetingRequest.Show();
 

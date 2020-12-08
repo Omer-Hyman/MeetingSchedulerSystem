@@ -60,7 +60,7 @@
     <Compile Include="MeetingHistory.Designer.cs">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="personas.cs" />
+    <Compile Include="Personas.cs" />
     <Compile Include="PersonaSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +81,6 @@
     <Compile Include="ScheduledMeetings.Designer.cs">
       <DependentUpon>ScheduledMeetings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
