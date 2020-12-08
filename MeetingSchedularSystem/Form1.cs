@@ -362,7 +362,7 @@ namespace MeetingSchedularSystem
             this.samResult = new TextBox();
 
             this.heatherResult = new TextBox();
- 
+            // UI changes needed here
             this.rosaliaResult = new TextBox();
             this.meetingDetails.SuspendLayout();
             this.SuspendLayout();
@@ -669,7 +669,7 @@ namespace MeetingSchedularSystem
   
             this.AutoScaleDimensions = new SizeF(6f, 13f);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(1213, 417);
+            this.ClientSize = new Size(1080, 720);
             //this.Controls.Add((Control)this.label23);
        
             //this.Controls.Add((Control)this.label21);
