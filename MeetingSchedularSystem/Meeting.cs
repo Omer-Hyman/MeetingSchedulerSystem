@@ -89,7 +89,7 @@ namespace MeetingSchedularSystem
             HashSet<MeetingSlot> MS_Set = new HashSet<MeetingSlot>();
             for (; DateTime.Compare(firstTime, this.endDate) <=0; firstTime = firstTime.AddDays(1.0))
             {// can also change number of slots
-                for (; number_of_slot <= 6; ++number_of_slot)
+                for (; number_of_slot <= 4; ++number_of_slot)
                 {
                     MeetingSlot meeting_slot = new MeetingSlot(firstTime.Year, firstTime.Month, firstTime.Day, number_of_slot);
                     first.Add(meeting_slot);

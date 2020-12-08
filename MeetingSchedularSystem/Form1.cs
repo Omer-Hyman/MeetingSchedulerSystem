@@ -349,7 +349,13 @@ namespace MeetingSchedularSystem
 
             this.heather_preferenceSet = new TextBox();
             // add all the labels
-            
+            this.label20 = new Label();
+            this.label22 = new Label();
+            this.label23 = new Label();
+            this.label24 = new Label();
+            this.label25 = new Label();
+            this.label26 = new Label();
+
             this.meetingDetails = new GroupBox();
            
             this.meetingErrors = new TextBox();
@@ -560,12 +566,12 @@ namespace MeetingSchedularSystem
             this.meetingDetails.TabIndex = 32;
             this.meetingDetails.TabStop = false;
             this.meetingDetails.Text = "Meeting Details";
-            //this.label26.AutoSize = true;
-            //this.label26.Location = new Point(6, 64);
-            //this.label26.Name = "label26";
-            //this.label26.Size = new Size(34, 13);
-            //this.label26.TabIndex = 55;
-            //this.label26.Text = "Errors";
+            this.label26.AutoSize = true;
+            this.label26.Location = new Point(6, 64);
+            this.label26.Name = "label26";
+            this.label26.Size = new Size(34, 13);
+            this.label26.TabIndex = 55;
+            this.label26.Text = "Errors";
             this.meetingErrors.Location = new Point(9, 80);
             this.meetingErrors.Name = "meetingErrors";
             this.meetingErrors.ReadOnly = true;
@@ -712,7 +718,7 @@ namespace MeetingSchedularSystem
 */            this.Controls.Add((Control)this.meetingInitiator);
             this.Controls.Add((Control)this.button1);
             this.Margin = new Padding(2);
-            this.Name = nameof(SchedulerUI);
+            this.Name = "SchedulerUI";
             this.Text = "Meeting Scheduler System";
             this.meetingDetails.ResumeLayout(false);
             this.meetingDetails.PerformLayout();
