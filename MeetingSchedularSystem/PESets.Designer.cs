@@ -46,7 +46,7 @@
       this.liam_preferenceSet.Name = "liam_preferenceSet";
       this.liam_preferenceSet.Size = new System.Drawing.Size(222, 156);
       this.liam_preferenceSet.TabIndex = 9;
-      this.liam_preferenceSet.Text = "10/12/2018 Slot 1\r\n10/12/2018 Slot 2";
+      this.liam_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
       // 
       // sam_preferenceSet
       // 
@@ -56,7 +56,7 @@
       this.sam_preferenceSet.Name = "sam_preferenceSet";
       this.sam_preferenceSet.Size = new System.Drawing.Size(250, 156);
       this.sam_preferenceSet.TabIndex = 14;
-      this.sam_preferenceSet.Text = "10/12/2018 Slot 1\r\n10/12/2018 Slot 2";
+      this.sam_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
       // 
       // newPSet
       // 

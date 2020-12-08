@@ -97,9 +97,6 @@
     <Compile Include="RequestMeeting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RequestMeeting.Designer.cs">
-      <DependentUpon>RequestMeeting.cs</DependentUpon>
-    </Compile>
     <Compile Include="ScheduledMeetings.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -408,20 +408,20 @@ namespace MeetingSchedularSystem
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new Size(151, 20);
             this.dateStart.TabIndex = 3;
-            this.dateStart.Text = "10/12/2018";
+            this.dateStart.Text = "01/01/2021";
    
             this.dateEnd.Location = new Point(12, 114);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new Size(151, 20);
             this.dateEnd.TabIndex = 5;
-            this.dateEnd.Text = "12/12/2018";
+            this.dateEnd.Text = "03/01/2021";
 
             this.liam_preferenceSet.Location = new Point(176, 48);
             this.liam_preferenceSet.Multiline = true;
             this.liam_preferenceSet.Name = "liam_preferenceSet";
             this.liam_preferenceSet.Size = new Size(200, 60);
             this.liam_preferenceSet.TabIndex = 8;
-            this.liam_preferenceSet.Text = "10/12/2018 Slot 1\r\n10/12/2018 Slot 2";
+            this.liam_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
 
             this.label6.Text = "Exclusion Set";
             this.liam_exclusionSet.Location = new Point(176, 128);
@@ -448,7 +448,7 @@ namespace MeetingSchedularSystem
             this.sam_preferenceSet.Name = "sam_preferenceSet";
             this.sam_preferenceSet.Size = new Size(200, 60);
             this.sam_preferenceSet.TabIndex = 13;
-            this.sam_preferenceSet.Text = "10/12/2018 Slot 1\r\n10/12/2018 Slot 2";
+            this.sam_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
 
             this.rosalia_exclusionSet.Location = new Point(587, 128);
             this.rosalia_exclusionSet.Multiline = true;
@@ -462,7 +462,7 @@ namespace MeetingSchedularSystem
             this.rosalia_preferenceSet.Name = "rosalia_preferenceSet";
             this.rosalia_preferenceSet.Size = new Size(200, 60);
             this.rosalia_preferenceSet.TabIndex = 18;
-            this.rosalia_preferenceSet.Text = "10/12/2018 Slot 1\r\n10/12/2018 Slot 2";
+            this.rosalia_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
 
             this.heather_exclusionSet.Location = new Point(794, 128);
             this.heather_exclusionSet.Multiline = true;
@@ -476,7 +476,7 @@ namespace MeetingSchedularSystem
             this.heather_preferenceSet.Name = "heather_preferenceSet";
             this.heather_preferenceSet.Size = new Size(200, 60);
             this.heather_preferenceSet.TabIndex = 23;
-            this.heather_preferenceSet.Text = "10/12/2018 Slot 1\r\n10/12/2018 Slot 2";
+            this.heather_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
             this.meetingDetails.Controls.Add((Control)this.label26);
             this.meetingDetails.Controls.Add((Control)this.meetingErrors);
             this.meetingDetails.Controls.Add((Control)this.meetingSlot);
