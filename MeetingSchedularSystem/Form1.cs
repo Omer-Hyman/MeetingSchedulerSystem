@@ -4,13 +4,21 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using WindowsFormsApp2;
+
 
 
 namespace MeetingSchedularSystem
 {
 
-
+  public enum UserType
+  {
+    // this is how we do importance
+    One,
+    Two,
+    Three,
+    Four,
+    Five
+  };
   public class SchedulerUI : Form
   {
     private Meeting meeting;
