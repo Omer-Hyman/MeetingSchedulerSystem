@@ -6,43 +6,56 @@ using System.Threading.Tasks;
 
 namespace MeetingSchedularSystem
 {
-  class Personas
+  internal class Personas
   {
-    private string name;
+    public string name;
     private int importanceLevel;
-    private bool initiator;
+    public bool initiator;
+    public HashSet<MeetingSlot> preferenceSet;
+    public HashSet<MeetingSlot> exclusionSet;
+
+    // preference and exclusion sets could go here, probably as hashsets. the idea would be for a class to handle meeting 'instances'
+    // so hashset of type 'MeetingInstance'
+
 
     public Personas(string Name, int Importance, bool initiator)
     {
       name = Name;
       importanceLevel = Importance;
-      initiator = Initiator;
-    }
+      this.initiator = initiator;
+      this.preferenceSet = new HashSet<MeetingSlot>();
+      this.exclusionSet = new HashSet<MeetingSlot>();
 
-    public Personas()
+            // would pass each individual's preference, exclusions here
+
+    }
+    
+    public void addToPSet(MeetingSlot meetingS)
     {
-      name = "Fname Lname";
-      importanceLevel = 5;
-      initiator = false;
-
+            if(this.exclusionSet.Contains(meetingS))
+                throw new MSlotException("Slot is in the exclusion set." + (object) meetingS, this);
+            this.preferenceSet.Add(meetingS);
     }
 
-    public string Name { get; set; }
-    public int Importance { get; set; }
-    public bool Initiator { get; set;
-    }
-
-    public void toggleInitiator()
+    public void addToESet(MeetingSlot meetingS)
     {
-      if (initiator)
-      {
-        initiator = false;
-      }
-      else
-      {
-        initiator = true;
-      }
+            if(this.preferenceSet.Contains(meetingS))
+                throw new MSlotException("Slot already in pref set" + (object) meetingS, this);
+            this.preferenceSet.Add(meetingS);
     }
-    }
+
+    public bool MSInPSet(MeetingSlot meetingS) => this.preferenceSet.Contains(meetingS);
+    public bool MSInESet(MeetingSlot meetingS) => this.exclusionSet.Contains(meetingS);
+    //public Personas()
+    //{
+   //  name = "Fname Lname";
+   //   importanceLevel = 5;
+   //   initiator = false;
+
+   // }
+
+    //public string Name { get; set; }
+    //public int Importance { get; set; }
+    //public bool Initiator { get; set; }
   }
-
+}

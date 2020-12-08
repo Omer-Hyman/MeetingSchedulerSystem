@@ -40,15 +40,15 @@ namespace MeetingSchedularSystem
     private void cancelMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form mainUI = new mainUI();
-      mainUI.Show();
+      Form schedulerUI = new SchedulerUI();
+      schedulerUI.Show();
 
     }
 
     private void submitMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form mainUI = new mainUI();
+      Form mainUI = new SchedulerUI();
       mainUI.Show();
 
       
@@ -57,14 +57,14 @@ namespace MeetingSchedularSystem
 
       newMeeting.Title = meetingName.Text;//meeting title
 
-      newMeeting.Date = datePicker.Value; //date
+      //newMeeting.Date = datePicker.Value; //date
       
       newMeeting.Description = meetingDescription.Text;//description
 
-      for (int i = 0; i < guestList.CheckedItems.Count; i++)
-      {
-        newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
-      }
+      //for (int i = 0; i < guestList.CheckedItems.Count; i++)
+      //{
+      //  newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
+      //}
 
       for (int i = 0; i < equipmentList.CheckedItems.Count; i++)
       {

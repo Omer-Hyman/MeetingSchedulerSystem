@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.label1);
             this.Name = "MeetingHistory";
             this.Text = "Meeting History";
-            //this.Load += new System.EventHandler(this.MeetingHistory_Load_1);
+            this.Load += new System.EventHandler(this.MeetingHistory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
