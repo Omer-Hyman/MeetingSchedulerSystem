@@ -38,13 +38,32 @@ namespace MeetingSchedularSystem
     private TextBox meetingDate;
     private TextBox meetingSlotNo;
     private GroupBox meetingDetails;
+    private Label label1;
+    private Label label2;
+    private Label label3;
+    private Label label4;
+    private Label label5;
     private Label label6;
-    private Label label26;
-    private Label label25;
-    private Label label23;
-    private Label label22;
-    private Label label24;
+    private Label label7;
+    private Label label8;
+    private Label label9;
+    private Label label10;
+    private Label label11;
+    private Label label12;
+    private Label label13;
+    private Label label14;
+    private Label label15;
+    private Label label16;
+    private Label label17;
+    private Label label18;
+    private Label label19;
     private Label label20;
+    private Label label21;
+    private Label label22;
+    private Label label23;
+    private Label label24;
+    private Label label25;
+    private Label label26;
     private Label meetingSlot;
 
     //public mainUI()
@@ -63,6 +82,16 @@ namespace MeetingSchedularSystem
       string[] dateEnd = this.dateEnd.Text.Split('/');
       DateTime startDate = new DateTime(int.Parse(dateStart[2]), int.Parse(dateStart[1]), int.Parse(dateStart[0]));
       DateTime endDate = new DateTime(int.Parse(dateEnd[2]), int.Parse(dateEnd[1]), int.Parse(dateEnd[0]));
+      this.liamResult.Text = "Waiting";
+      this.rosaliaResult.Text = "Waiting";
+      this.heatherResult.Text = "Waiting";
+      this.samResult.Text = "Waiting";
+      this.meetingStatus.Text = "Not yet planned";
+      this.meetingErrors.Text = "No errors";
+      this.meetingDate.Text = "Not yet planned";
+      this.meetingSlotNo.Text = "Not planned";
+
+
       // UI components, set values
       try
       {
@@ -75,9 +104,14 @@ namespace MeetingSchedularSystem
           this.meetingErrors.Text = "No Errors";
           this.meeting.setStatus("Scheduled");
           this.meetingDate.Text = topSlot.date.ToShortDateString();
-          // slot no
-          int number = (int)MessageBox.Show("Meeting slot has been found: \n" + topSlot.ToString());
-
+                    // slot no
+          this.meetingSlotNo.Text = "Slot " + topSlot.ID.ToString();
+          int num = (int)MessageBox.Show("Meeting slot has been found: \n" + topSlot.ToString());
+           // explain to the users what slot numbers actually mean - i.e. what date ranges they translate to
+           // expand no of slots to 6
+           // and also time
+           // and location
+           // and how do we input our own preference sets?
         }
         catch (WeakConflictError er)
         {
@@ -138,7 +172,7 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        //check = false;
+        check = false;
         TextBox liamResult = this.liamResult;
         liamResult.Text = liamResult.Text + ex.Message + "\n";
 
@@ -146,7 +180,7 @@ namespace MeetingSchedularSystem
       if (this.liamResult.Text == "")
         this.liamResult.Text = "Okay";
       // persona instance 2: Sam
-      Personas persona2 = new Personas("Sam Scott", 2, true);
+      Personas persona2 = new Personas("Sam Scott", 2, false);
       this.samResult.Text = "";
       try
       {
@@ -155,8 +189,8 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-/*        check = false;
-*/        TextBox samResult = this.samResult;
+        check = false;
+        TextBox samResult = this.samResult;
         samResult.Text = samResult.Text + ex.Message + "\n";
       }
       try
@@ -166,8 +200,8 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-/*        check = false;
-*/        TextBox samResult = this.samResult;
+        check = false;
+        TextBox samResult = this.samResult;
         samResult.Text = samResult.Text + ex.Message + "\n";
 
       }
@@ -176,7 +210,7 @@ namespace MeetingSchedularSystem
         this.samResult.Text = "Okay";
       }
       // Persona 3 instance: Rosalia
-      Personas persona3 = new Personas("Rosalia Cortez", 3, true);
+      Personas persona3 = new Personas("Rosalia Cortez", 3, false);
       this.rosaliaResult.Text = "";
 
       try
@@ -186,7 +220,7 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        //check = false;
+        check = false;
         TextBox rosaliaResult = this.rosaliaResult;
         rosaliaResult.Text = rosaliaResult.Text + ex.Message + "\n";
       }
@@ -196,14 +230,14 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        //check = false;
+        check = false;
         TextBox rosaliaResult = this.rosaliaResult;
         rosaliaResult.Text = rosaliaResult.Text + ex.Message + "\n";
       }
       if (this.rosaliaResult.Text == "")
         this.rosaliaResult.Text = "Okay";
       // Persona 4 instance: Heather
-      Personas persona4 = new Personas("Heather McLean", 1, true);
+      Personas persona4 = new Personas("Heather McLean", 1, false);
       this.heatherResult.Text = "";
 
       try
@@ -213,17 +247,17 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-/*        check = false;
-*/        TextBox rosaliaResult = this.rosaliaResult;
-        rosaliaResult.Text = rosaliaResult.Text + ex.Message + "\n";
+          check = false;
+        TextBox heatherResult = this.heatherResult;
+        heatherResult.Text = heatherResult.Text + ex.Message + "\n";
       }
       try
       {
-        this.fillPersonaSet(persona3, "exclusion", this.rosalia_exclusionSet.Text);
+        this.fillPersonaSet(persona4, "exclusion", this.heather_exclusionSet.Text);
       }
       catch (MSlotException ex)
       {
-        //check = false;
+        check = false;
         TextBox heatherResult = this.heatherResult;
         heatherResult.Text = heatherResult.Text + ex.Message + "\n";
       }
@@ -233,11 +267,11 @@ namespace MeetingSchedularSystem
       personaList.Add(persona2);
       personaList.Add(persona3);
       personaList.Add(persona4);
-      //if (!check)
-      //{
-      //  throw new Exception("Error with participants");
+      if (!check)
+      {
+        throw new Exception("Error with participants");
 
-      //}
+      }
       return personaList;
     }
     private void fillPersonaSet(Personas persona, string setType, string setText)

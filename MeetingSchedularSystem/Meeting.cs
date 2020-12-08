@@ -32,7 +32,7 @@ namespace MeetingSchedularSystem
     private Initiator initiator;
     private DateTime startDate;
     private DateTime endDate;
-    private HashSet<Personas> personas;
+    private HashSet<Personas> personaCollection;
 
     // additionals, some to be added later
     private string[] equipment = new string[5];
@@ -48,7 +48,7 @@ namespace MeetingSchedularSystem
       this.startDate = DateTime.Compare(startDate, endDate) >= 0 ? startDate : throw new DateRangeError("The end date cannot be before the start date");
       this.endDate = endDate;
       this.equipment = equipment;
-      this.personas = new HashSet<Personas>();
+      this.personaCollection = new HashSet<Personas>();
       this.description = description;
       this.location = location;
       //location
@@ -66,12 +66,14 @@ namespace MeetingSchedularSystem
       this.initiator = initiator;
       this.startDate = startDate;
       this.endDate = endDate;
-    }
+      this.personaCollection = new HashSet<Personas>();
 
-    public void setStatus(string status) => this.status = status;
+   }
+
+        public void setStatus(string status) => this.status = status;
     public string getStatus() => this.status;
 
-    public void addPersona(Personas persona) => this.personas.Add(persona);
+    public void addPersona(Personas persona) => this.personaCollection.Add(persona);
     public List<MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
     public DateTime getStartDate() => this.startDate;
     public DateTime getEndDate() => this.endDate;
@@ -92,7 +94,7 @@ namespace MeetingSchedularSystem
           MeetingSlot meeting_slot = new MeetingSlot(firstTime.Year, firstTime.Month, firstTime.Day, number_of_slot);
           first.Add(meeting_slot);
           int number = 0;
-          foreach (Personas persona in this.personas)
+          foreach (Personas persona in this.personaCollection)
           {
             bool check_1 = persona.MSInESet(meeting_slot);
             bool check_2 = persona.MSInPSet(meeting_slot);
@@ -103,7 +105,7 @@ namespace MeetingSchedularSystem
             else if (check_2)
               ++number;
           }
-          if (this.personas.Count == number)
+          if (this.personaCollection.Count == number)
             source.Add(meeting_slot);
         }
         number_of_slot = 1;
