@@ -51,6 +51,8 @@ namespace MeetingSchedularSystem
       Form mainUI = new SchedulerUI();
       mainUI.Show();
 
+      
+
       Meeting newMeeting = new Meeting();
 
       newMeeting.Title = meetingName.Text;//meeting title
@@ -69,6 +71,7 @@ namespace MeetingSchedularSystem
         newMeeting.Equipment[i] = equipmentList.CheckedItems[i].ToString();//equipment
       }
 
+      
       
       //importance level - attached to personas
       //location

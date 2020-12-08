@@ -115,12 +115,11 @@
     }
 
     #endregion
-
-    private System.Windows.Forms.Button user1;
     private System.Windows.Forms.Button user2;
     private System.Windows.Forms.Button user3;
     private System.Windows.Forms.Button user4;
     private System.Windows.Forms.Button user5;
     private System.Windows.Forms.Label userSelectLabel;
+    public System.Windows.Forms.Button user1;
   }
 }
