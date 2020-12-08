@@ -36,9 +36,9 @@ namespace MeetingSchedularSystem
       this.Hide();
     }
 
-    public string getMeetingDetails()
+    public void setMeetingDetails(string name, DateTime date, string location, string[] equipment, string[] guests, string description)
     {
-      return meetingDescription.Text;
+      
     }
 
     private void submitMeetingButton_Click(object sender, EventArgs e)

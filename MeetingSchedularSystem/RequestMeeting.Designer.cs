@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.datePicker = new System.Windows.Forms.DateTimePicker();
-      this.dateLabel = new System.Windows.Forms.Label();
+      this.dateRangeLabel = new System.Windows.Forms.Label();
       this.inviteGuests = new System.Windows.Forms.Label();
       this.guestList = new System.Windows.Forms.CheckedListBox();
       this.descriptionLabel = new System.Windows.Forms.Label();
@@ -37,10 +37,12 @@
       this.submitMeetingButton = new System.Windows.Forms.Button();
       this.equipmentLabel = new System.Windows.Forms.Label();
       this.cancelMeetingButton = new System.Windows.Forms.Button();
-      this.timeLabel = new System.Windows.Forms.Label();
       this.meetingNameLabel = new System.Windows.Forms.Label();
       this.meetingName = new System.Windows.Forms.TextBox();
       this.equipmentList = new System.Windows.Forms.CheckedListBox();
+      this.locationLabel = new System.Windows.Forms.Label();
+      this.locationList = new System.Windows.Forms.CheckedListBox();
+      this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
       this.SuspendLayout();
       // 
       // datePicker
@@ -48,25 +50,25 @@
       this.datePicker.AllowDrop = true;
       this.datePicker.CustomFormat = "";
       this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-      this.datePicker.Location = new System.Drawing.Point(38, 120);
+      this.datePicker.Location = new System.Drawing.Point(38, 127);
       this.datePicker.Name = "datePicker";
-      this.datePicker.Size = new System.Drawing.Size(205, 22);
+      this.datePicker.Size = new System.Drawing.Size(189, 22);
       this.datePicker.TabIndex = 1;
       this.datePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
       // 
-      // dateLabel
+      // dateRangeLabel
       // 
-      this.dateLabel.AutoSize = true;
-      this.dateLabel.Location = new System.Drawing.Point(35, 89);
-      this.dateLabel.Name = "dateLabel";
-      this.dateLabel.Size = new System.Drawing.Size(42, 17);
-      this.dateLabel.TabIndex = 2;
-      this.dateLabel.Text = "Date:";
+      this.dateRangeLabel.AutoSize = true;
+      this.dateRangeLabel.Location = new System.Drawing.Point(35, 103);
+      this.dateRangeLabel.Name = "dateRangeLabel";
+      this.dateRangeLabel.Size = new System.Drawing.Size(104, 21);
+      this.dateRangeLabel.TabIndex = 2;
+      this.dateRangeLabel.Text = "Date range:";
       // 
       // inviteGuests
       // 
       this.inviteGuests.AutoSize = true;
-      this.inviteGuests.Location = new System.Drawing.Point(266, 120);
+      this.inviteGuests.Location = new System.Drawing.Point(38, 199);
       this.inviteGuests.Name = "inviteGuests";
       this.inviteGuests.Size = new System.Drawing.Size(91, 17);
       this.inviteGuests.TabIndex = 3;
@@ -83,7 +85,7 @@
             "Liam Williams",
             "Sam Scott",
             "Rosalia Cortez"});
-      this.guestList.Location = new System.Drawing.Point(269, 158);
+      this.guestList.Location = new System.Drawing.Point(38, 227);
       this.guestList.Name = "guestList";
       this.guestList.Size = new System.Drawing.Size(189, 106);
       this.guestList.TabIndex = 4;
@@ -92,7 +94,7 @@
       // descriptionLabel
       // 
       this.descriptionLabel.AutoSize = true;
-      this.descriptionLabel.Location = new System.Drawing.Point(38, 267);
+      this.descriptionLabel.Location = new System.Drawing.Point(35, 336);
       this.descriptionLabel.Name = "descriptionLabel";
       this.descriptionLabel.Size = new System.Drawing.Size(135, 17);
       this.descriptionLabel.TabIndex = 6;
@@ -100,7 +102,7 @@
       // 
       // meetingDescription
       // 
-      this.meetingDescription.Location = new System.Drawing.Point(41, 296);
+      this.meetingDescription.Location = new System.Drawing.Point(38, 356);
       this.meetingDescription.Multiline = true;
       this.meetingDescription.Name = "meetingDescription";
       this.meetingDescription.Size = new System.Drawing.Size(417, 77);
@@ -108,7 +110,7 @@
       // 
       // submitMeetingButton
       // 
-      this.submitMeetingButton.Location = new System.Drawing.Point(41, 397);
+      this.submitMeetingButton.Location = new System.Drawing.Point(38, 455);
       this.submitMeetingButton.Name = "submitMeetingButton";
       this.submitMeetingButton.Size = new System.Drawing.Size(176, 48);
       this.submitMeetingButton.TabIndex = 8;
@@ -120,7 +122,7 @@
       // equipmentLabel
       // 
       this.equipmentLabel.AutoSize = true;
-      this.equipmentLabel.Location = new System.Drawing.Point(35, 158);
+      this.equipmentLabel.Location = new System.Drawing.Point(252, 226);
       this.equipmentLabel.Name = "equipmentLabel";
       this.equipmentLabel.Size = new System.Drawing.Size(79, 17);
       this.equipmentLabel.TabIndex = 9;
@@ -129,22 +131,13 @@
       // 
       // cancelMeetingButton
       // 
-      this.cancelMeetingButton.Location = new System.Drawing.Point(325, 397);
+      this.cancelMeetingButton.Location = new System.Drawing.Point(322, 455);
       this.cancelMeetingButton.Name = "cancelMeetingButton";
       this.cancelMeetingButton.Size = new System.Drawing.Size(133, 48);
       this.cancelMeetingButton.TabIndex = 11;
       this.cancelMeetingButton.Text = "Cancel";
       this.cancelMeetingButton.UseVisualStyleBackColor = true;
       this.cancelMeetingButton.Click += new System.EventHandler(this.cancelMeetingButton_Click);
-      // 
-      // timeLabel
-      // 
-      this.timeLabel.AutoSize = true;
-      this.timeLabel.Location = new System.Drawing.Point(161, 89);
-      this.timeLabel.Name = "timeLabel";
-      this.timeLabel.Size = new System.Drawing.Size(43, 17);
-      this.timeLabel.TabIndex = 14;
-      this.timeLabel.Text = "Time:";
       // 
       // meetingNameLabel
       // 
@@ -158,7 +151,7 @@
       // meetingName
       // 
       this.meetingName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.meetingName.Location = new System.Drawing.Point(41, 46);
+      this.meetingName.Location = new System.Drawing.Point(38, 55);
       this.meetingName.Name = "meetingName";
       this.meetingName.Size = new System.Drawing.Size(417, 38);
       this.meetingName.TabIndex = 16;
@@ -172,20 +165,55 @@
             "Projector",
             "Whiteboard",
             "Desktop"});
-      this.equipmentList.Location = new System.Drawing.Point(38, 192);
+      this.equipmentList.Location = new System.Drawing.Point(255, 260);
       this.equipmentList.Name = "equipmentList";
       this.equipmentList.Size = new System.Drawing.Size(205, 72);
       this.equipmentList.TabIndex = 17;
+      // 
+      // locationLabel
+      // 
+      this.locationLabel.AutoSize = true;
+      this.locationLabel.Location = new System.Drawing.Point(252, 103);
+      this.locationLabel.Name = "locationLabel";
+      this.locationLabel.Size = new System.Drawing.Size(83, 21);
+      this.locationLabel.TabIndex = 18;
+      this.locationLabel.Text = "Location:";
+      // 
+      // locationList
+      // 
+      this.locationList.CheckOnClick = true;
+      this.locationList.FormattingEnabled = true;
+      this.locationList.Items.AddRange(new object[] {
+            "Meeting Room 1",
+            "Meeting Room 2",
+            "Meeting Room 3",
+            "Meeting Room 4"});
+      this.locationList.Location = new System.Drawing.Point(250, 127);
+      this.locationList.Name = "locationList";
+      this.locationList.Size = new System.Drawing.Size(205, 89);
+      this.locationList.TabIndex = 19;
+      // 
+      // dateTimePicker1
+      // 
+      this.dateTimePicker1.AllowDrop = true;
+      this.dateTimePicker1.CustomFormat = "";
+      this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+      this.dateTimePicker1.Location = new System.Drawing.Point(38, 164);
+      this.dateTimePicker1.Name = "dateTimePicker1";
+      this.dateTimePicker1.Size = new System.Drawing.Size(189, 22);
+      this.dateTimePicker1.TabIndex = 20;
       // 
       // RequestMeeting
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(499, 492);
+      this.ClientSize = new System.Drawing.Size(499, 550);
+      this.Controls.Add(this.dateTimePicker1);
+      this.Controls.Add(this.locationList);
+      this.Controls.Add(this.locationLabel);
       this.Controls.Add(this.equipmentList);
       this.Controls.Add(this.meetingName);
       this.Controls.Add(this.meetingNameLabel);
-      this.Controls.Add(this.timeLabel);
       this.Controls.Add(this.cancelMeetingButton);
       this.Controls.Add(this.equipmentLabel);
       this.Controls.Add(this.submitMeetingButton);
@@ -193,7 +221,7 @@
       this.Controls.Add(this.descriptionLabel);
       this.Controls.Add(this.guestList);
       this.Controls.Add(this.inviteGuests);
-      this.Controls.Add(this.dateLabel);
+      this.Controls.Add(this.dateRangeLabel);
       this.Controls.Add(this.datePicker);
       this.Name = "RequestMeeting";
       this.Text = "RequestMeeting";
@@ -205,7 +233,7 @@
 
     #endregion
     private System.Windows.Forms.DateTimePicker datePicker;
-    private System.Windows.Forms.Label dateLabel;
+    private System.Windows.Forms.Label dateRangeLabel;
     private System.Windows.Forms.Label inviteGuests;
     private System.Windows.Forms.CheckedListBox guestList;
     private System.Windows.Forms.Label descriptionLabel;
@@ -213,9 +241,11 @@
     private System.Windows.Forms.Button submitMeetingButton;
     private System.Windows.Forms.Label equipmentLabel;
     private System.Windows.Forms.Button cancelMeetingButton;
-    private System.Windows.Forms.Label timeLabel;
     private System.Windows.Forms.Label meetingNameLabel;
     private System.Windows.Forms.TextBox meetingName;
     private System.Windows.Forms.CheckedListBox equipmentList;
+    private System.Windows.Forms.Label locationLabel;
+    private System.Windows.Forms.CheckedListBox locationList;
+    private System.Windows.Forms.DateTimePicker dateTimePicker1;
   }
 }

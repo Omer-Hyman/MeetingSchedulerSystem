@@ -84,6 +84,7 @@
       this.personaList.FormattingEnabled = true;
       this.personaList.Items.AddRange(new object[] {
             "Liam Williams",
+            "Mehmet-Bulent Özcan",
             "Sam Scott",
             "Rosalia Cortez",
             "Heather McLean"});

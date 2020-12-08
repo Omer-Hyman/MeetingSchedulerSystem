@@ -28,13 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-      System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
-      System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
+      System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
       this.viewSets = new System.Windows.Forms.Button();
       this.newMeeting = new System.Windows.Forms.Button();
       this.meetingHistory = new System.Windows.Forms.Button();
@@ -44,7 +38,6 @@
       this.listView1 = new System.Windows.Forms.ListView();
       this.pendingMeetingsLabel = new System.Windows.Forms.Label();
       this.scheduledMeetingsLabel = new System.Windows.Forms.Label();
-      this.tempMeetingLabel = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // viewSets
@@ -110,22 +103,15 @@
       // 
       // listView1
       // 
-      listViewGroup2.Header = "ListViewGroup";
-      listViewGroup2.Name = "Ya";
+      listViewGroup1.Header = "ListViewGroup";
+      listViewGroup1.Name = "Ya";
       this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup2});
+            listViewGroup1});
       this.listView1.HideSelection = false;
-      this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
-      this.listView1.Location = new System.Drawing.Point(28, 431);
+      this.listView1.Location = new System.Drawing.Point(28, 310);
       this.listView1.Margin = new System.Windows.Forms.Padding(2);
       this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(161, 76);
+      this.listView1.Size = new System.Drawing.Size(161, 197);
       this.listView1.TabIndex = 8;
       this.listView1.UseCompatibleStateImageBehavior = false;
       // 
@@ -149,22 +135,11 @@
       this.scheduledMeetingsLabel.TabIndex = 6;
       this.scheduledMeetingsLabel.Text = "Scheduled Meetings:";
       // 
-      // tempMeetingLabel
-      // 
-      this.tempMeetingLabel.AutoSize = true;
-      this.tempMeetingLabel.Location = new System.Drawing.Point(36, 330);
-      this.tempMeetingLabel.Name = "tempMeetingLabel";
-      this.tempMeetingLabel.Size = new System.Drawing.Size(49, 21);
-      this.tempMeetingLabel.TabIndex = 10;
-      this.tempMeetingLabel.Text = "temp";
-      this.tempMeetingLabel.Click += new System.EventHandler(this.tempMeetingLabel_Click);
-      // 
       // mainPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(420, 540);
-      this.Controls.Add(this.tempMeetingLabel);
       this.Controls.Add(this.listView2);
       this.Controls.Add(this.listView1);
       this.Controls.Add(this.pendingMeetingsLabel);
@@ -192,6 +167,5 @@
     private System.Windows.Forms.Label pendingMeetingsLabel;
     private System.Windows.Forms.Label scheduledMeetingsLabel;
     public System.Windows.Forms.Button newMeeting;
-    private System.Windows.Forms.Label tempMeetingLabel;
   }
 }
