@@ -59,5 +59,41 @@ namespace MeetingSchedularSystem
       Form meetingRequest = new RequestMeeting();
       meetingRequest.Show();
     }
+
+    private void personaList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      Form main = new mainPage(personaList.SelectedItem.ToString().Trim()); //.trim not working
+      this.Hide();
+      main.Show();
+      switch (this.Text)
+      {
+        case "Liam Williams":
+
+          // persona instance 1: Liam
+          Personas persona1 = new Personas("Liam Williams", 5, true);
+          /*try
+          {
+            this.fillPersonaSet(persona1, "preference", this.liam_preferenceSet.Text);
+          }
+          catch (MSlotException ex)
+          {
+            check = false;
+            TextBox liamResult = this.liamResult;
+            liamResult.Text = liamResult.Text + ex.Message + "\n";
+          }*/
+          break;
+        case "Sam Scott":
+
+          break;
+        case "Rosalia Cortez":
+
+          break;
+        case "Heather McLean":
+
+          break;
+      }
+
+
+    }
   }
 }

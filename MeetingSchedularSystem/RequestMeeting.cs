@@ -33,16 +33,12 @@ namespace MeetingSchedularSystem
     private void cancelMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form schedulerUI = new SchedulerUI();
-      schedulerUI.Show();
-
     }
 
     private void submitMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form mainUI = new SchedulerUI();
-      mainUI.Show();
+      
 
 
 

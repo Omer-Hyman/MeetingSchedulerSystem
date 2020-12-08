@@ -120,30 +120,7 @@ namespace MeetingSchedularSystem
 
 
     }
-    // working getters and setters for every attribute
-    /*    public string Initiator
-        {
-          get
-          {
-            return initiator;
-          }
-          set
-          {
-            initiator = value;
-          }
-        }*/
-
-    //public DateTime Date
-    //{
-    //  get
-    //  {
-    //    return timeDate;
-    //  }
-    //  set
-    //  {
-    //    timeDate = value;
-    //  }
-    //}
+    
     public String[] Equipment
     {
       get

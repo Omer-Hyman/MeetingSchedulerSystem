@@ -42,16 +42,6 @@ namespace MeetingSchedularSystem
 
     public bool MSInPSet(MeetingSlot meetingS) => this.preferenceSet.Contains(meetingS);
     public bool MSInESet(MeetingSlot meetingS) => this.exclusionSet.Contains(meetingS);
-    //public Personas()
-    //{
-    //  name = "Fname Lname";
-    //   importanceLevel = 5;
-    //   initiator = false;
-
-    // }
-
-    //public string Name { get; set; }
-    //public int Importance { get; set; }
-    //public bool Initiator { get; set; }
+    
   }
 }
