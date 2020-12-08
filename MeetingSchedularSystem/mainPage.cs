@@ -41,8 +41,8 @@ namespace MeetingSchedularSystem
 
     private void meetingHistory_Click(object sender, EventArgs e)
     {
-      /*Form history = new meetingHistory(); // can't find MeetingHistory for some reason - maybe bc it's a partail class?
-      history.Show();*/
+      Form history = new MeetingHistory(); // can't find MeetingHistory for some reason - maybe bc it's a partail class?
+      history.Show();
     }
 
     private void helloUser_Click(object sender, EventArgs e)
