@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateRangeError.cs" />
+    <Compile Include="Initiator.cs" />
     <Compile Include="MS.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

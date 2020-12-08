@@ -30,46 +30,50 @@ namespace MeetingSchedularSystem
   {
 
 
-    // attributes
-    private string meetingInitiator;
-    private string title;
-    private DateTime timeDate;
+    // basic attributes
+    private Initiator initiator;
     private DateTime startDate;
     private DateTime endDate;
-    private string[] guests = new string[10];
+    private HashSet<Personas> personas;
+    
+    // additionals, some to be added later
     private string[] equipment = new string[5];
-    private string meetingDescription;
+    private string description;
     private string location;
     private UserType importanceLevel;
-    private HashSet<Personas> personas;
     private string status = "Request";
 
-    public Meeting(string meetingTitle, string initiator, string[] possibleGuests, DateTime date, string[] Equipment, string description, string meetingLocation, UserType type)
+    public Meeting(Initiator initiator, DateTime date, DateTime startDate, DateTime endDate, string[] equipment, string description, string location)
     {
-      // constructor
-      title = meetingTitle;
-      meetingInitiator = initiator;
-      guests = possibleGuests;
-      timeDate = date;
-      equipment = Equipment;
-      meetingDescription = description;
-      location = meetingLocation;
-      importanceLevel = type;
-
+            // constructor
+      this.initiator = initiator;
+      this.startDate = DateTime.Compare(startDate, endDate) >= 0 ? startDate : throw new DateRangeError("The end date cannot be before the start date");
+      this.endDate = endDate;
+      this.equipment = equipment;
+      this.personas = new HashSet<Personas>();
+      this.description = description;
+      this.location = location;
       //location
     }
     public Meeting()
     {
-      meetingInitiator = "<enter name>";
       DateTime timeDate = new DateTime(2020, 3, 1, 7, 0, 0);
-      meetingDescription = "";
+      description = "";
       importanceLevel = UserType.Five;
 
     }
-    public void setStatus(string status) => this.status = status;
+
+        public Meeting(Initiator initiator, DateTime startDate, DateTime endDate)
+        {
+            this.initiator = initiator;
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+
+        public void setStatus(string status) => this.status = status;
     public string getStatus() => this.status;
 
-    public void addPerson(Personas persona) => this.personas.Add(persona);
+    public void addPersona(Personas persona) => this.personas.Add(persona);
     public List <MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
     public DateTime getStartDate() => this.startDate;
     public DateTime getEndDate() => this.endDate;
@@ -119,39 +123,29 @@ namespace MeetingSchedularSystem
         
     }
     // working getters and setters for every attribute
-    public string Initiator
+/*    public string Initiator
     {
       get
       {
-        return meetingInitiator;
+        return initiator;
       }
       set
       {
-        meetingInitiator = value;
+        initiator = value;
       }
-    }
-    public String[] Guests
-    {
-      get
-      {
-        return guests;
-      }
-      set
-      {
-        guests = value;
-      }
-    }
-    public DateTime Date
-    {
-      get
-      {
-        return timeDate;
-      }
-      set
-      {
-        timeDate = value;
-      }
-    }
+    }*/
+
+    //public DateTime Date
+    //{
+    //  get
+    //  {
+    //    return timeDate;
+    //  }
+    //  set
+    //  {
+    //    timeDate = value;
+    //  }
+    //}
     public String[] Equipment
     {
       get
@@ -167,11 +161,11 @@ namespace MeetingSchedularSystem
     {
       get
       {
-        return meetingDescription;
+        return description;
       }
       set
       {
-        meetingDescription = value;
+        description = value;
       }
     }
 

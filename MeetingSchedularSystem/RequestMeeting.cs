@@ -55,14 +55,14 @@ namespace MeetingSchedularSystem
 
       newMeeting.Title = meetingName.Text;//meeting title
 
-      newMeeting.Date = datePicker.Value; //date
+      //newMeeting.Date = datePicker.Value; //date
       
       newMeeting.Description = meetingDescription.Text;//description
 
-      for (int i = 0; i < guestList.CheckedItems.Count; i++)
-      {
-        newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
-      }
+      //for (int i = 0; i < guestList.CheckedItems.Count; i++)
+      //{
+      //  newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
+      //}
 
       for (int i = 0; i < equipmentList.CheckedItems.Count; i++)
       {
