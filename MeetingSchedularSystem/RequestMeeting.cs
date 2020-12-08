@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using WindowsFormsApp2;
 
 namespace MeetingSchedularSystem
 {
@@ -533,7 +532,7 @@ namespace MeetingSchedularSystem
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(364, 31);
+            this.label25.Location = new System.Drawing.Point(406, 31);
             this.label25.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(140, 25);
