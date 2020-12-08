@@ -1,32 +1,30 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MeetingSchedularSystem
 {
   //Omer's class
 
-/*  class Meeting
-  {
-    public string MeetingInitiator { get; set; }
-    public string Date { get; set; }
-    public string Time { get; set; }
-    public string[] Guests { get; set; }
-    public string[] Equipment { get; set; }
-    public string MeetingDescription { get; set; }
+  /*  class Meeting
+    {
+      public string MeetingInitiator { get; set; }
+      public string Date { get; set; }
+      public string Time { get; set; }
+      public string[] Guests { get; set; }
+      public string[] Equipment { get; set; }
+      public string MeetingDescription { get; set; }
 
-    private string meetingIniator;
-    private string date;
-    private string time;
-    private string[] guests;
-    private string[] equipment;
-    private string meetingDescrption;
+      private string meetingIniator;
+      private string date;
+      private string time;
+      private string[] guests;
+      private string[] equipment;
+      private string meetingDescrption;
 
-  }*/
+    }*/
 
- internal class Meeting
+  internal class Meeting
   {
 
 
@@ -35,7 +33,7 @@ namespace MeetingSchedularSystem
     private DateTime startDate;
     private DateTime endDate;
     private HashSet<Personas> personas;
-    
+
     // additionals, some to be added later
     private string[] equipment = new string[5];
     private string description;
@@ -45,7 +43,7 @@ namespace MeetingSchedularSystem
 
     public Meeting(Initiator initiator, DateTime date, DateTime startDate, DateTime endDate, string[] equipment, string description, string location)
     {
-            // constructor
+      // constructor
       this.initiator = initiator;
       this.startDate = DateTime.Compare(startDate, endDate) >= 0 ? startDate : throw new DateRangeError("The end date cannot be before the start date");
       this.endDate = endDate;
@@ -63,77 +61,77 @@ namespace MeetingSchedularSystem
 
     }
 
-        public Meeting(Initiator initiator, DateTime startDate, DateTime endDate)
-        {
-            this.initiator = initiator;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
+    public Meeting(Initiator initiator, DateTime startDate, DateTime endDate)
+    {
+      this.initiator = initiator;
+      this.startDate = startDate;
+      this.endDate = endDate;
+    }
 
-        public void setStatus(string status) => this.status = status;
+    public void setStatus(string status) => this.status = status;
     public string getStatus() => this.status;
 
     public void addPersona(Personas persona) => this.personas.Add(persona);
-    public List <MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
+    public List<MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
     public DateTime getStartDate() => this.startDate;
     public DateTime getEndDate() => this.endDate;
 
 
     public MeetingSlot findTopMS()
     {
-            DateTime firstTime = this.startDate;
-            int number_of_slot = 1;
-            // generic logic, we'll implement our own, better version
-            HashSet<MeetingSlot> first = new HashSet<MeetingSlot>();
-            HashSet<MeetingSlot> source = new HashSet<MeetingSlot>();
-            HashSet<MeetingSlot> MS_Set = new HashSet<MeetingSlot>();
-            for (; DateTime.Compare(firstTime, this.endDate) <=0; firstTime = firstTime.AddDays(1.0))
-            {// can also change number of slots
-                for (; number_of_slot <= 4; ++number_of_slot)
-                {
-                    MeetingSlot meeting_slot = new MeetingSlot(firstTime.Year, firstTime.Month, firstTime.Day, number_of_slot);
-                    first.Add(meeting_slot);
-                    int number = 0;
-                    foreach(Personas persona in this.personas)
-                    {
-                        bool check_1 = persona.MSInESet(meeting_slot);
-                        bool check_2 = persona.MSInPSet(meeting_slot);
-                        if (check_1 == true)
-                        {
-                            MS_Set.Add(meeting_slot);
-                        }
-                        else if (check_2)
-                            ++number;
-                    }
-                    if (this.personas.Count == number)
-                        source.Add(meeting_slot);
-                }
-                number_of_slot = 1;
-            }
-            if(source.Count > 0)
+      DateTime firstTime = this.startDate;
+      int number_of_slot = 1;
+      // generic logic, we'll implement our own, better version
+      HashSet<MeetingSlot> first = new HashSet<MeetingSlot>();
+      HashSet<MeetingSlot> source = new HashSet<MeetingSlot>();
+      HashSet<MeetingSlot> MS_Set = new HashSet<MeetingSlot>();
+      for (; DateTime.Compare(firstTime, this.endDate) <= 0; firstTime = firstTime.AddDays(1.0))
+      {// can also change number of slots
+        for (; number_of_slot <= 4; ++number_of_slot)
+        {
+          MeetingSlot meeting_slot = new MeetingSlot(firstTime.Year, firstTime.Month, firstTime.Day, number_of_slot);
+          first.Add(meeting_slot);
+          int number = 0;
+          foreach (Personas persona in this.personas)
+          {
+            bool check_1 = persona.MSInESet(meeting_slot);
+            bool check_2 = persona.MSInPSet(meeting_slot);
+            if (check_1 == true)
             {
-                return source.ElementAt<MeetingSlot>(0);
+              MS_Set.Add(meeting_slot);
             }
-            IEnumerable<MeetingSlot> meetingSlots = first.Except<MeetingSlot>((IEnumerable<MeetingSlot>) MS_Set);
-            // conflict resolution errors
-            if (meetingSlots.Count<MeetingSlot>() > 0)
-                throw new WeakConflictError("No available meeting slot in ALL preference sets, " + (object)meetingSlots.Count<MeetingSlot>() + " but the slots are NOT in the exclusion sets in range.", meetingSlots);
-            throw new StrongConflictError("No available meeting slots found in preference slots, and no available meeting slots found that are not in exclusion sets");
+            else if (check_2)
+              ++number;
+          }
+          if (this.personas.Count == number)
+            source.Add(meeting_slot);
+        }
+        number_of_slot = 1;
+      }
+      if (source.Count > 0)
+      {
+        return source.ElementAt<MeetingSlot>(0);
+      }
+      IEnumerable<MeetingSlot> meetingSlots = first.Except<MeetingSlot>((IEnumerable<MeetingSlot>)MS_Set);
+      // conflict resolution errors
+      if (meetingSlots.Count<MeetingSlot>() > 0)
+        throw new WeakConflictError("No available meeting slot in ALL preference sets, " + (object)meetingSlots.Count<MeetingSlot>() + " but the slots are NOT in the exclusion sets in range.", meetingSlots);
+      throw new StrongConflictError("No available meeting slots found in preference slots, and no available meeting slots found that are not in exclusion sets");
 
-        
+
     }
     // working getters and setters for every attribute
-/*    public string Initiator
-    {
-      get
-      {
-        return initiator;
-      }
-      set
-      {
-        initiator = value;
-      }
-    }*/
+    /*    public string Initiator
+        {
+          get
+          {
+            return initiator;
+          }
+          set
+          {
+            initiator = value;
+          }
+        }*/
 
     //public DateTime Date
     //{

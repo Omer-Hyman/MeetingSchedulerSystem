@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MeetingSchedularSystem
@@ -51,14 +44,14 @@ namespace MeetingSchedularSystem
       Form mainUI = new SchedulerUI();
       mainUI.Show();
 
-      
+
 
       Meeting newMeeting = new Meeting();
 
       newMeeting.Title = meetingName.Text;//meeting title
 
       //newMeeting.Date = datePicker.Value; //date
-      
+
       newMeeting.Description = meetingDescription.Text;//description
 
       //for (int i = 0; i < guestList.CheckedItems.Count; i++)
@@ -71,8 +64,8 @@ namespace MeetingSchedularSystem
         newMeeting.Equipment[i] = equipmentList.CheckedItems[i].ToString();//equipment
       }
 
-      
-      
+
+
       //importance level - attached to personas
       //location
     }
