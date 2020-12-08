@@ -40,15 +40,15 @@ namespace MeetingSchedularSystem
     private void cancelMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form mainUI = new mainUI();
-      mainUI.Show();
+      Form schedulerUI = new SchedulerUI();
+      schedulerUI.Show();
 
     }
 
     private void submitMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form mainUI = new mainUI();
+      Form mainUI = new SchedulerUI();
       mainUI.Show();
 
       Meeting newMeeting = new Meeting();

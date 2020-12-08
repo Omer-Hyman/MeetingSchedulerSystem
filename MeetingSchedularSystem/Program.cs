@@ -18,7 +18,7 @@ namespace MeetingSchedularSystem
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new mainUI());
+      Application.Run(new SchedulerUI());
 
       Personas mehmet = new Personas("Mehmet Ozcan", 2, false);
       Personas heather = new Personas("Heather McLean", 3, false);
