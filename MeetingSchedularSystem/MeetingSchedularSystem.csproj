@@ -117,6 +117,9 @@
     <EmbeddedResource Include="MeetingHistory.resx">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="newESet.resx">
+      <DependentUpon>newESet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="newPSet.resx">
       <DependentUpon>newPSet.cs</DependentUpon>
     </EmbeddedResource>

@@ -41,6 +41,7 @@
       this.userSelectLabel.Size = new System.Drawing.Size(266, 31);
       this.userSelectLabel.TabIndex = 5;
       this.userSelectLabel.Text = "Please select a user.";
+      this.userSelectLabel.Click += new System.EventHandler(this.userSelectLabel_Click);
       // 
       // personaList
       // 

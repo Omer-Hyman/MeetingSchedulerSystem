@@ -62,7 +62,7 @@ namespace MeetingSchedularSystem
 
     private void personaList_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Form main = new mainPage(personaList.SelectedItem.ToString().Trim()); //.trim not working
+      Form main = new mainPage(personaList.SelectedItem.ToString());
       this.Hide();
       main.Show();
       switch (this.Text)
@@ -93,6 +93,11 @@ namespace MeetingSchedularSystem
           break;
       }
 
+
+    }
+
+    private void userSelectLabel_Click(object sender, EventArgs e)
+    {
 
     }
   }

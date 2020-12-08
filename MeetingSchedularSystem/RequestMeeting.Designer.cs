@@ -197,6 +197,7 @@
       this.Controls.Add(this.datePicker);
       this.Name = "RequestMeeting";
       this.Text = "RequestMeeting";
+      this.Load += new System.EventHandler(this.RequestMeeting_Load);
       this.ResumeLayout(false);
       this.PerformLayout();
 
