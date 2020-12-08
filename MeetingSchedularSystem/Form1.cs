@@ -66,17 +66,9 @@ namespace MeetingSchedularSystem
     private Label label26;
     private Label meetingSlot;
 
-    //public mainUI()
-    //{
-    //  InitializeComponent();
-    //}
     public SchedulerUI() => this.InitializeComponent();
     private void button1_Click(object sender, EventArgs e)
     {
-      /*      this.Hide();
-            Form persona = new PersonaSelect();
-            persona.Show();
-            */
 
       string[] dateStart = this.dateStart.Text.Split('/');
       string[] dateEnd = this.dateEnd.Text.Split('/');
@@ -130,7 +122,6 @@ namespace MeetingSchedularSystem
         catch (Exception er)
         {
           throw er;
-
         }
 
       }
@@ -162,30 +153,29 @@ namespace MeetingSchedularSystem
       // regex would go here if we can't figure out a better way
       // had to do it for one of thoose placement assessment things so be reyt
       bool check = true;
+
       // persona instance 1: Liam
       Personas persona1 = new Personas("Liam Williams", 5, true);
       this.liamResult.Text = "";
       try
       {
         this.fillPersonaSet(persona1, "preference", this.liam_preferenceSet.Text);
-
       }
       catch (MSlotException ex)
       {
         check = false;
         TextBox liamResult = this.liamResult;
         liamResult.Text = liamResult.Text + ex.Message + "\n";
-
       }
       if (this.liamResult.Text == "")
         this.liamResult.Text = "Okay";
+
       // persona instance 2: Sam
       Personas persona2 = new Personas("Sam Scott", 2, false);
       this.samResult.Text = "";
       try
       {
         this.fillPersonaSet(persona2, "preference", this.sam_preferenceSet.Text);
-
       }
       catch (MSlotException ex)
       {
@@ -196,7 +186,6 @@ namespace MeetingSchedularSystem
       try
       {
         this.fillPersonaSet(persona2, "exclusion", this.sam_exclusionSet.Text);
-
       }
       catch (MSlotException ex)
       {
@@ -209,10 +198,10 @@ namespace MeetingSchedularSystem
       {
         this.samResult.Text = "Okay";
       }
+
       // Persona 3 instance: Rosalia
       Personas persona3 = new Personas("Rosalia Cortez", 3, false);
       this.rosaliaResult.Text = "";
-
       try
       {
         this.fillPersonaSet(persona3, "preference", this.rosalia_preferenceSet.Text);
@@ -236,6 +225,7 @@ namespace MeetingSchedularSystem
       }
       if (this.rosaliaResult.Text == "")
         this.rosaliaResult.Text = "Okay";
+
       // Persona 4 instance: Heather
       Personas persona4 = new Personas("Heather McLean", 1, false);
       this.heatherResult.Text = "";
@@ -245,7 +235,7 @@ namespace MeetingSchedularSystem
         this.fillPersonaSet(persona4, "preference", this.heather_preferenceSet.Text);
 
       }
-      catch (MSlotException ex)
+      catch (MSlotException ex)//cant find persona
       {
           check = false;
         TextBox heatherResult = this.heatherResult;
@@ -270,9 +260,9 @@ namespace MeetingSchedularSystem
       if (!check)
       {
         throw new Exception("Error with participants");
-
       }
       return personaList;
+
     }
     private void fillPersonaSet(Personas persona, string setType, string setText)
     {
@@ -291,6 +281,8 @@ namespace MeetingSchedularSystem
         else
           persona.addToESet(meetingSlot);
       }
+
+
     }
 
     private void historyButton_Click(object sender, EventArgs e)
@@ -336,6 +328,8 @@ namespace MeetingSchedularSystem
     }
     private void scheduledMeetingPlaceholder_Click(object sender, EventArgs e)
     {
+
+
     }
 
     private void button1_Click_1(object sender, EventArgs e)
@@ -608,7 +602,7 @@ namespace MeetingSchedularSystem
 
     }
 
-    private void liam_exclusionSet_TextChanged(object sender, EventArgs e)
+    private void meetingInitiator_TextChanged(object sender, EventArgs e)
     {
 
     }

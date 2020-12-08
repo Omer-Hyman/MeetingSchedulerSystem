@@ -8,6 +8,7 @@ namespace MeetingSchedularSystem
     public RequestMeeting()
     {
       InitializeComponent();
+      
     }
 
     private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -33,46 +34,49 @@ namespace MeetingSchedularSystem
     private void cancelMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form schedulerUI = new SchedulerUI();
-      schedulerUI.Show();
+    }
 
+    public void setMeetingDetails(string name, DateTime date, string location, string[] equipment, string[] guests, string description)
+    {
+      
     }
 
     private void submitMeetingButton_Click(object sender, EventArgs e)
     {
       this.Hide();
-      Form mainUI = new SchedulerUI();
-      mainUI.Show();
-
-
-
+     
       Meeting newMeeting = new Meeting();
-
       newMeeting.Title = meetingName.Text;//meeting title
-
-      //newMeeting.Date = datePicker.Value; //date
-
       newMeeting.Description = meetingDescription.Text;//description
-
-      //for (int i = 0; i < guestList.CheckedItems.Count; i++)
-      //{
-      //  newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
-      //}
 
       for (int i = 0; i < equipmentList.CheckedItems.Count; i++)
       {
         newMeeting.Equipment[i] = equipmentList.CheckedItems[i].ToString();//equipment
       }
 
+      //newMeeting.Date = datePicker.Value; //date
 
+      /*for (int i = 0; i < guestList.CheckedItems.Count; i++)
+      {
+        newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
+      }
+*/
 
       //importance level - attached to personas
       //location
+
     }
 
     private void guestList_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }
+
+    private void RequestMeeting_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    
   }
 }

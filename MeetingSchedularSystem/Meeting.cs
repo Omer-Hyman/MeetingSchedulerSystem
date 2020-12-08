@@ -26,8 +26,6 @@ namespace MeetingSchedularSystem
 
   internal class Meeting
   {
-
-
     // basic attributes
     private Initiator initiator;
     private DateTime startDate;
@@ -58,7 +56,6 @@ namespace MeetingSchedularSystem
       DateTime timeDate = new DateTime(2020, 3, 1, 7, 0, 0);
       description = "";
       importanceLevel = UserType.Five;
-
     }
 
     public Meeting(Initiator initiator, DateTime startDate, DateTime endDate)
@@ -122,30 +119,7 @@ namespace MeetingSchedularSystem
 
 
     }
-    // working getters and setters for every attribute
-    /*    public string Initiator
-        {
-          get
-          {
-            return initiator;
-          }
-          set
-          {
-            initiator = value;
-          }
-        }*/
-
-    //public DateTime Date
-    //{
-    //  get
-    //  {
-    //    return timeDate;
-    //  }
-    //  set
-    //  {
-    //    timeDate = value;
-    //  }
-    //}
+    
     public String[] Equipment
     {
       get
@@ -182,8 +156,5 @@ namespace MeetingSchedularSystem
     }
 
   }
-
-
-
 
 }
