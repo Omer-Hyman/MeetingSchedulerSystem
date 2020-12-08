@@ -41,7 +41,7 @@
       this.viewSets.Name = "viewSets";
       this.viewSets.Size = new System.Drawing.Size(193, 78);
       this.viewSets.TabIndex = 1;
-      this.viewSets.Text = "View other user\'s Preferance and Exclusion sets";
+      this.viewSets.Text = "View Preferance and Exclusion sets";
       this.viewSets.UseVisualStyleBackColor = true;
       this.viewSets.Click += new System.EventHandler(this.viewSets_Click);
       // 
@@ -57,7 +57,7 @@
       // 
       // meetingHistory
       // 
-      this.meetingHistory.Location = new System.Drawing.Point(427, 119);
+      this.meetingHistory.Location = new System.Drawing.Point(291, 238);
       this.meetingHistory.Name = "meetingHistory";
       this.meetingHistory.Size = new System.Drawing.Size(145, 51);
       this.meetingHistory.TabIndex = 3;
@@ -71,7 +71,7 @@
       this.helloUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.helloUser.Location = new System.Drawing.Point(63, 35);
       this.helloUser.Name = "helloUser";
-      this.helloUser.Size = new System.Drawing.Size(175, 40);
+      this.helloUser.Size = new System.Drawing.Size(140, 32);
       this.helloUser.TabIndex = 4;
       this.helloUser.Text = "Welcome ";
       this.helloUser.Click += new System.EventHandler(this.helloUser_Click);
@@ -82,7 +82,7 @@
       this.switchUser.Name = "switchUser";
       this.switchUser.Size = new System.Drawing.Size(145, 51);
       this.switchUser.TabIndex = 5;
-      this.switchUser.Text = "Switch User";
+      this.switchUser.Text = "Not ? Switch User";
       this.switchUser.UseVisualStyleBackColor = true;
       this.switchUser.Click += new System.EventHandler(this.switchUser_Click);
       // 
@@ -90,7 +90,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.ClientSize = new System.Drawing.Size(492, 362);
       this.Controls.Add(this.switchUser);
       this.Controls.Add(this.helloUser);
       this.Controls.Add(this.meetingHistory);

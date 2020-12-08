@@ -67,12 +67,30 @@
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="MSlotException.cs" />
+    <Compile Include="newESet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newESet.Designer.cs">
+      <DependentUpon>newESet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newPSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newPSet.Designer.cs">
+      <DependentUpon>newPSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="personas.cs" />
     <Compile Include="PersonaSelect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PersonaSelect.Designer.cs">
       <DependentUpon>PersonaSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PESets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PESets.Designer.cs">
+      <DependentUpon>PESets.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,8 +117,14 @@
     <EmbeddedResource Include="MeetingHistory.resx">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="newPSet.resx">
+      <DependentUpon>newPSet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PersonaSelect.resx">
       <DependentUpon>PersonaSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PESets.resx">
+      <DependentUpon>PESets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

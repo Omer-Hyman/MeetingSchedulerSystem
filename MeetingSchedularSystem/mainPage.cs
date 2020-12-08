@@ -15,7 +15,8 @@ namespace MeetingSchedularSystem
     public mainPage(string initiator)
     {
       InitializeComponent();
-      helloUser.Text += initiator;//meeting initiator 
+      helloUser.Text += initiator;//meeting initiator
+      switchUser.Text = "Not " + initiator + "? Switch User";
     }
 
     private void mainPage_Load(object sender, EventArgs e)
@@ -31,7 +32,8 @@ namespace MeetingSchedularSystem
 
     private void viewSets_Click(object sender, EventArgs e)
     {
-
+      Form viewSets = new PESets();
+      viewSets.Show();
     }
 
     private void meetingHistory_Click(object sender, EventArgs e)
