@@ -4,15 +4,26 @@ using System.Linq;
 
 namespace MeetingSchedularSystem
 {
-  public enum UserType
-  {
-    // this is how we do importance
-    One,
-    Two,
-    Three,
-    Four,
-    Five
-  };
+  //Omer's class
+
+  /*  class Meeting
+    {
+      public string MeetingInitiator { get; set; }
+      public string Date { get; set; }
+      public string Time { get; set; }
+      public string[] Guests { get; set; }
+      public string[] Equipment { get; set; }
+      public string MeetingDescription { get; set; }
+
+      private string meetingIniator;
+      private string date;
+      private string time;
+      private string[] guests;
+      private string[] equipment;
+      private string meetingDescrption;
+
+    }*/
+
   internal class Meeting
   {
     // basic attributes

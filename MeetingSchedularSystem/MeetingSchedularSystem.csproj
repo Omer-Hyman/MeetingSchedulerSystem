@@ -54,18 +54,18 @@
     <Compile Include="mainPage.Designer.cs">
       <DependentUpon>mainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MeetingHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MeetingHistory.Designer.cs">
-      <DependentUpon>MeetingHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="MS.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Location.cs" />
     <Compile Include="Meeting.cs" />
+    <Compile Include="MeetingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeetingHistory.Designer.cs">
+      <DependentUpon>MeetingHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="MSlotException.cs" />
     <Compile Include="newESet.cs">
       <SubType>Form</SubType>
@@ -113,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainPage.resx">
       <DependentUpon>mainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeetingHistory.resx">
+      <DependentUpon>MeetingHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newESet.resx">
       <DependentUpon>newESet.cs</DependentUpon>
