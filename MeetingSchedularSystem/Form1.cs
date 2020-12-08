@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp2;
@@ -37,6 +38,7 @@ namespace MeetingSchedularSystem
     private TextBox meetingDate;
     private TextBox meetingSlotNo;
     private GroupBox meetingDetails;
+    private Label label6;
     private Label label26;
     private Label label25;
     private Label label23;
@@ -136,7 +138,7 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
+        //check = false;
         TextBox liamResult = this.liamResult;
         liamResult.Text = liamResult.Text + ex.Message + "\n";
 
@@ -153,8 +155,8 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
-        TextBox samResult = this.samResult;
+/*        check = false;
+*/        TextBox samResult = this.samResult;
         samResult.Text = samResult.Text + ex.Message + "\n";
       }
       try
@@ -164,8 +166,8 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
-        TextBox samResult = this.samResult;
+/*        check = false;
+*/        TextBox samResult = this.samResult;
         samResult.Text = samResult.Text + ex.Message + "\n";
 
       }
@@ -184,7 +186,7 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
+        //check = false;
         TextBox rosaliaResult = this.rosaliaResult;
         rosaliaResult.Text = rosaliaResult.Text + ex.Message + "\n";
       }
@@ -194,7 +196,7 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
+        //check = false;
         TextBox rosaliaResult = this.rosaliaResult;
         rosaliaResult.Text = rosaliaResult.Text + ex.Message + "\n";
       }
@@ -211,8 +213,8 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
-        TextBox rosaliaResult = this.rosaliaResult;
+/*        check = false;
+*/        TextBox rosaliaResult = this.rosaliaResult;
         rosaliaResult.Text = rosaliaResult.Text + ex.Message + "\n";
       }
       try
@@ -221,7 +223,7 @@ namespace MeetingSchedularSystem
       }
       catch (MSlotException ex)
       {
-        check = false;
+        //check = false;
         TextBox heatherResult = this.heatherResult;
         heatherResult.Text = heatherResult.Text + ex.Message + "\n";
       }
@@ -231,11 +233,11 @@ namespace MeetingSchedularSystem
       personaList.Add(persona2);
       personaList.Add(persona3);
       personaList.Add(persona4);
-      if (!check)
-      {
-        throw new Exception("Error with participants");
+      //if (!check)
+      //{
+      //  throw new Exception("Error with participants");
 
-      }
+      //}
       return personaList;
     }
     private void fillPersonaSet(Personas persona, string setType, string setText)
@@ -550,7 +552,7 @@ namespace MeetingSchedularSystem
 
             this.Controls.Add((Control)this.rosalia_exclusionSet);
             this.Controls.Add((Control)this.rosalia_preferenceSet);
-]
+
             this.Controls.Add((Control)this.sam_exclusionSet);
 
             this.Controls.Add((Control)this.sam_preferenceSet);
