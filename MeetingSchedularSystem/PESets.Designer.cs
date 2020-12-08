@@ -92,6 +92,7 @@
       this.personaList.Name = "personaList";
       this.personaList.Size = new System.Drawing.Size(121, 24);
       this.personaList.TabIndex = 20;
+      this.personaList.SelectedIndexChanged += new System.EventHandler(this.personaList_SelectedIndexChanged);
       // 
       // userSelectLabel
       // 

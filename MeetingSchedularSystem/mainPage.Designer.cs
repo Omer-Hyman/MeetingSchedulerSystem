@@ -28,7 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+      System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
       this.viewSets = new System.Windows.Forms.Button();
       this.newMeeting = new System.Windows.Forms.Button();
       this.meetingHistory = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
       // 
       this.helloUser.AutoSize = true;
       this.helloUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.helloUser.Location = new System.Drawing.Point(33, 74);
+      this.helloUser.Location = new System.Drawing.Point(22, 76);
       this.helloUser.Name = "helloUser";
       this.helloUser.Size = new System.Drawing.Size(140, 32);
       this.helloUser.TabIndex = 4;
@@ -103,10 +103,10 @@
       // 
       // listView1
       // 
-      listViewGroup1.Header = "ListViewGroup";
-      listViewGroup1.Name = "Ya";
+      listViewGroup4.Header = "ListViewGroup";
+      listViewGroup4.Name = "Ya";
       this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
+            listViewGroup4});
       this.listView1.HideSelection = false;
       this.listView1.Location = new System.Drawing.Point(28, 310);
       this.listView1.Margin = new System.Windows.Forms.Padding(2);
@@ -139,7 +139,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(420, 540);
+      this.ClientSize = new System.Drawing.Size(488, 543);
       this.Controls.Add(this.listView2);
       this.Controls.Add(this.listView1);
       this.Controls.Add(this.pendingMeetingsLabel);

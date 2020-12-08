@@ -36,7 +36,7 @@
       // 
       this.userSelectLabel.AutoSize = true;
       this.userSelectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-      this.userSelectLabel.Location = new System.Drawing.Point(29, 34);
+      this.userSelectLabel.Location = new System.Drawing.Point(22, 33);
       this.userSelectLabel.Name = "userSelectLabel";
       this.userSelectLabel.Size = new System.Drawing.Size(266, 31);
       this.userSelectLabel.TabIndex = 5;
@@ -55,7 +55,7 @@
             "Heather McLean"});
       this.personaList.Location = new System.Drawing.Point(76, 96);
       this.personaList.Name = "personaList";
-      this.personaList.Size = new System.Drawing.Size(121, 24);
+      this.personaList.Size = new System.Drawing.Size(152, 24);
       this.personaList.TabIndex = 6;
       this.personaList.SelectedIndexChanged += new System.EventHandler(this.personaList_SelectedIndexChanged);
       // 
