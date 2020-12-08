@@ -24,14 +24,33 @@ namespace MeetingSchedularSystem
 
     private void newPSet_Click(object sender, EventArgs e)
     {
-      Form pSet = new newPSet();
-      pSet.Show();
+      if (personaList.Text == "")
+      {
+        MessageBox.Show("No user selected", "Please select a user", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+      }
+      else
+      { 
+        Form pSet = new newPSet(personaList.Text);
+        pSet.Show();
+      }
     }
 
     private void newESet_Click(object sender, EventArgs e)
     {
-      Form eSet = new newESet();
-      eSet.Show();
+      if (personaList.Text == "")
+      {
+        MessageBox.Show("No user selected", "Please select a user", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+      }
+      else
+      {
+        Form eSet = new newESet(personaList.Text);
+        eSet.Show();
+      }
+    }
+
+    private void personaList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
   }
 }

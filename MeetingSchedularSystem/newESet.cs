@@ -12,9 +12,16 @@ namespace MeetingSchedularSystem
 {
   public partial class newESet : Form
   {
-    public newESet()
+    public newESet(string persona)
     {
       InitializeComponent();
+      ESetLabel.Text = persona + ", " + ESetLabel.Text;
+
+    }
+
+    private void doneButton_Click(object sender, EventArgs e)
+    {
+      this.Hide();
     }
   }
 }
