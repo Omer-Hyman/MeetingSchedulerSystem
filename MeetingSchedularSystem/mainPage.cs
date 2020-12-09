@@ -13,12 +13,12 @@ namespace MeetingSchedularSystem
   public partial class mainPage : Form
   {
     
-    public mainPage(Initiator initiator)
+    public mainPage(string initiator)
     {
       InitializeComponent();
       
-      helloUser.Text += initiator.Name;//meeting initiator
-      switchUser.Text = "Not " + initiator.Name + "? Switch User";
+      meetingInitiatorLabel.Text = initiator;//meeting initiator
+      switchUser.Text = "Not " + initiator + "? Switch User";
         
     }
 
@@ -30,7 +30,8 @@ namespace MeetingSchedularSystem
     }
     private void newMeeting_Click(object sender, EventArgs e)
     {
-      Form newMeeting = new RequestMeeting();
+      
+      Form newMeeting = new RequestMeeting(meetingInitiatorLabel.Text);
       newMeeting.Show();
     }
 

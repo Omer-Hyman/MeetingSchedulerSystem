@@ -15,15 +15,15 @@ namespace MeetingSchedularSystem
       Personas sam = new Personas("Sam Scott", 5, false);
       Personas rosalia = new Personas("Rosalia Cortez", 4, false);
     }
-    public string initiator()
+    /*public string initiator()
     {
       return this.Text;
-    }
+    }*/
 
     private void personaList_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Initiator Initiator = new Initiator(personaList.SelectedItem.ToString());
-      Form main = new mainPage(Initiator);
+      //Initiator Initiator = new Initiator(personaList.SelectedItem.ToString());
+      Form main = new mainPage(personaList.SelectedItem.ToString());
       this.Hide();
       main.Show();
 

@@ -35,16 +35,15 @@ namespace MeetingSchedularSystem
     private TextBox meetingSlotNo;
     private GroupBox meetingDetails;
     private Label label6;
-    private Label label20;
-    private Label label22;
     private Label label23;
     private Label label24;
     private Label label25;
     private Label label26;
     private Label meetingSlot;
-    public RequestMeeting()
+    public RequestMeeting(string initiator)
     {
       InitializeComponent();
+      meetingInitiator.Text = initiator;
     }
 
     private void submitMeetingButton_Click(object sender, EventArgs e)
@@ -264,7 +263,6 @@ namespace MeetingSchedularSystem
           persona.addToESet(meetingSlot);
       }
 
-
     }
 
     private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -333,8 +331,6 @@ namespace MeetingSchedularSystem
       this.heather_exclusionSet = new System.Windows.Forms.TextBox();
       this.heather_preferenceSet = new System.Windows.Forms.TextBox();
       this.label6 = new System.Windows.Forms.Label();
-      this.label20 = new System.Windows.Forms.Label();
-      this.label22 = new System.Windows.Forms.Label();
       this.label23 = new System.Windows.Forms.Label();
       this.label24 = new System.Windows.Forms.Label();
       this.label25 = new System.Windows.Forms.Label();
@@ -355,7 +351,7 @@ namespace MeetingSchedularSystem
       // submitMeetingButton
       // 
       this.submitMeetingButton.Location = new System.Drawing.Point(16, 180);
-      this.submitMeetingButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.submitMeetingButton.Margin = new System.Windows.Forms.Padding(4);
       this.submitMeetingButton.Name = "submitMeetingButton";
       this.submitMeetingButton.Size = new System.Drawing.Size(201, 51);
       this.submitMeetingButton.TabIndex = 0;
@@ -366,7 +362,7 @@ namespace MeetingSchedularSystem
       // meetingInitiator
       // 
       this.meetingInitiator.Location = new System.Drawing.Point(16, 37);
-      this.meetingInitiator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingInitiator.Margin = new System.Windows.Forms.Padding(4);
       this.meetingInitiator.Name = "meetingInitiator";
       this.meetingInitiator.Size = new System.Drawing.Size(200, 22);
       this.meetingInitiator.TabIndex = 1;
@@ -376,7 +372,7 @@ namespace MeetingSchedularSystem
       // dateStart
       // 
       this.dateStart.Location = new System.Drawing.Point(16, 88);
-      this.dateStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.dateStart.Margin = new System.Windows.Forms.Padding(4);
       this.dateStart.Name = "dateStart";
       this.dateStart.Size = new System.Drawing.Size(105, 22);
       this.dateStart.TabIndex = 3;
@@ -385,7 +381,7 @@ namespace MeetingSchedularSystem
       // dateEnd
       // 
       this.dateEnd.Location = new System.Drawing.Point(16, 140);
-      this.dateEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.dateEnd.Margin = new System.Windows.Forms.Padding(4);
       this.dateEnd.Name = "dateEnd";
       this.dateEnd.Size = new System.Drawing.Size(105, 22);
       this.dateEnd.TabIndex = 5;
@@ -394,7 +390,7 @@ namespace MeetingSchedularSystem
       // liam_preferenceSet
       // 
       this.liam_preferenceSet.Location = new System.Drawing.Point(16, 308);
-      this.liam_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.liam_preferenceSet.Margin = new System.Windows.Forms.Padding(4);
       this.liam_preferenceSet.Multiline = true;
       this.liam_preferenceSet.Name = "liam_preferenceSet";
       this.liam_preferenceSet.Size = new System.Drawing.Size(265, 73);
@@ -404,7 +400,7 @@ namespace MeetingSchedularSystem
       // liam_exclusionSet
       // 
       this.liam_exclusionSet.Location = new System.Drawing.Point(16, 431);
-      this.liam_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.liam_exclusionSet.Margin = new System.Windows.Forms.Padding(4);
       this.liam_exclusionSet.Multiline = true;
       this.liam_exclusionSet.Name = "liam_exclusionSet";
       this.liam_exclusionSet.Size = new System.Drawing.Size(265, 73);
@@ -414,7 +410,7 @@ namespace MeetingSchedularSystem
       // sam_exclusionSet
       // 
       this.sam_exclusionSet.Location = new System.Drawing.Point(309, 431);
-      this.sam_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.sam_exclusionSet.Margin = new System.Windows.Forms.Padding(4);
       this.sam_exclusionSet.Multiline = true;
       this.sam_exclusionSet.Name = "sam_exclusionSet";
       this.sam_exclusionSet.Size = new System.Drawing.Size(265, 73);
@@ -424,7 +420,7 @@ namespace MeetingSchedularSystem
       // sam_preferenceSet
       // 
       this.sam_preferenceSet.Location = new System.Drawing.Point(309, 308);
-      this.sam_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.sam_preferenceSet.Margin = new System.Windows.Forms.Padding(4);
       this.sam_preferenceSet.Multiline = true;
       this.sam_preferenceSet.Name = "sam_preferenceSet";
       this.sam_preferenceSet.Size = new System.Drawing.Size(265, 73);
@@ -434,7 +430,7 @@ namespace MeetingSchedularSystem
       // rosalia_exclusionSet
       // 
       this.rosalia_exclusionSet.Location = new System.Drawing.Point(603, 431);
-      this.rosalia_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.rosalia_exclusionSet.Margin = new System.Windows.Forms.Padding(4);
       this.rosalia_exclusionSet.Multiline = true;
       this.rosalia_exclusionSet.Name = "rosalia_exclusionSet";
       this.rosalia_exclusionSet.Size = new System.Drawing.Size(265, 73);
@@ -444,7 +440,7 @@ namespace MeetingSchedularSystem
       // rosalia_preferenceSet
       // 
       this.rosalia_preferenceSet.Location = new System.Drawing.Point(603, 308);
-      this.rosalia_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.rosalia_preferenceSet.Margin = new System.Windows.Forms.Padding(4);
       this.rosalia_preferenceSet.Multiline = true;
       this.rosalia_preferenceSet.Name = "rosalia_preferenceSet";
       this.rosalia_preferenceSet.Size = new System.Drawing.Size(265, 73);
@@ -454,7 +450,7 @@ namespace MeetingSchedularSystem
       // heather_exclusionSet
       // 
       this.heather_exclusionSet.Location = new System.Drawing.Point(896, 431);
-      this.heather_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.heather_exclusionSet.Margin = new System.Windows.Forms.Padding(4);
       this.heather_exclusionSet.Multiline = true;
       this.heather_exclusionSet.Name = "heather_exclusionSet";
       this.heather_exclusionSet.Size = new System.Drawing.Size(265, 73);
@@ -464,7 +460,7 @@ namespace MeetingSchedularSystem
       // heather_preferenceSet
       // 
       this.heather_preferenceSet.Location = new System.Drawing.Point(896, 308);
-      this.heather_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.heather_preferenceSet.Margin = new System.Windows.Forms.Padding(4);
       this.heather_preferenceSet.Multiline = true;
       this.heather_preferenceSet.Name = "heather_preferenceSet";
       this.heather_preferenceSet.Size = new System.Drawing.Size(265, 73);
@@ -478,22 +474,6 @@ namespace MeetingSchedularSystem
       this.label6.Size = new System.Drawing.Size(100, 23);
       this.label6.TabIndex = 0;
       this.label6.Text = "Exclusion Set";
-      // 
-      // label20
-      // 
-      this.label20.Location = new System.Drawing.Point(0, 0);
-      this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-      this.label20.Name = "label20";
-      this.label20.Size = new System.Drawing.Size(133, 28);
-      this.label20.TabIndex = 46;
-      // 
-      // label22
-      // 
-      this.label22.Location = new System.Drawing.Point(0, 0);
-      this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-      this.label22.Name = "label22";
-      this.label22.Size = new System.Drawing.Size(133, 28);
-      this.label22.TabIndex = 45;
       // 
       // label23
       // 
@@ -543,9 +523,9 @@ namespace MeetingSchedularSystem
       this.meetingDetails.Controls.Add(this.label24);
       this.meetingDetails.Controls.Add(this.meetingStatus);
       this.meetingDetails.Location = new System.Drawing.Point(309, 677);
-      this.meetingDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingDetails.Margin = new System.Windows.Forms.Padding(4);
       this.meetingDetails.Name = "meetingDetails";
-      this.meetingDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingDetails.Padding = new System.Windows.Forms.Padding(4);
       this.meetingDetails.Size = new System.Drawing.Size(781, 136);
       this.meetingDetails.TabIndex = 32;
       this.meetingDetails.TabStop = false;
@@ -554,7 +534,7 @@ namespace MeetingSchedularSystem
       // meetingErrors
       // 
       this.meetingErrors.Location = new System.Drawing.Point(12, 99);
-      this.meetingErrors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingErrors.Margin = new System.Windows.Forms.Padding(4);
       this.meetingErrors.Name = "meetingErrors";
       this.meetingErrors.ReadOnly = true;
       this.meetingErrors.Size = new System.Drawing.Size(743, 22);
@@ -574,7 +554,7 @@ namespace MeetingSchedularSystem
       // meetingSlotNo
       // 
       this.meetingSlotNo.Location = new System.Drawing.Point(524, 40);
-      this.meetingSlotNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingSlotNo.Margin = new System.Windows.Forms.Padding(4);
       this.meetingSlotNo.Name = "meetingSlotNo";
       this.meetingSlotNo.ReadOnly = true;
       this.meetingSlotNo.Size = new System.Drawing.Size(231, 22);
@@ -584,7 +564,7 @@ namespace MeetingSchedularSystem
       // meetingDate
       // 
       this.meetingDate.Location = new System.Drawing.Point(271, 40);
-      this.meetingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingDate.Margin = new System.Windows.Forms.Padding(4);
       this.meetingDate.Name = "meetingDate";
       this.meetingDate.ReadOnly = true;
       this.meetingDate.Size = new System.Drawing.Size(231, 22);
@@ -594,7 +574,7 @@ namespace MeetingSchedularSystem
       // meetingStatus
       // 
       this.meetingStatus.Location = new System.Drawing.Point(12, 40);
-      this.meetingStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingStatus.Margin = new System.Windows.Forms.Padding(4);
       this.meetingStatus.Name = "meetingStatus";
       this.meetingStatus.ReadOnly = true;
       this.meetingStatus.Size = new System.Drawing.Size(231, 22);
@@ -604,7 +584,7 @@ namespace MeetingSchedularSystem
       // liamResult
       // 
       this.liamResult.Location = new System.Drawing.Point(16, 554);
-      this.liamResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.liamResult.Margin = new System.Windows.Forms.Padding(4);
       this.liamResult.Multiline = true;
       this.liamResult.Name = "liamResult";
       this.liamResult.ReadOnly = true;
@@ -615,7 +595,7 @@ namespace MeetingSchedularSystem
       // samResult
       // 
       this.samResult.Location = new System.Drawing.Point(309, 554);
-      this.samResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.samResult.Margin = new System.Windows.Forms.Padding(4);
       this.samResult.Multiline = true;
       this.samResult.Name = "samResult";
       this.samResult.ReadOnly = true;
@@ -626,7 +606,7 @@ namespace MeetingSchedularSystem
       // heatherResult
       // 
       this.heatherResult.Location = new System.Drawing.Point(896, 554);
-      this.heatherResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.heatherResult.Margin = new System.Windows.Forms.Padding(4);
       this.heatherResult.Multiline = true;
       this.heatherResult.Name = "heatherResult";
       this.heatherResult.ReadOnly = true;
@@ -637,7 +617,7 @@ namespace MeetingSchedularSystem
       // rosaliaResult
       // 
       this.rosaliaResult.Location = new System.Drawing.Point(603, 554);
-      this.rosaliaResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.rosaliaResult.Margin = new System.Windows.Forms.Padding(4);
       this.rosaliaResult.Multiline = true;
       this.rosaliaResult.Name = "rosaliaResult";
       this.rosaliaResult.ReadOnly = true;
@@ -651,9 +631,7 @@ namespace MeetingSchedularSystem
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1440, 848);
       this.Controls.Add(this.heatherResult);
-      this.Controls.Add(this.label22);
       this.Controls.Add(this.rosaliaResult);
-      this.Controls.Add(this.label20);
       this.Controls.Add(this.samResult);
       this.Controls.Add(this.liamResult);
       this.Controls.Add(this.meetingDetails);
@@ -671,6 +649,7 @@ namespace MeetingSchedularSystem
       this.Controls.Add(this.submitMeetingButton);
       this.Name = "RequestMeeting";
       this.Text = "Meeting Scheduler System";
+      this.Load += new System.EventHandler(this.RequestMeeting_Load_1);
       this.meetingDetails.ResumeLayout(false);
       this.meetingDetails.PerformLayout();
       this.ResumeLayout(false);
@@ -679,6 +658,11 @@ namespace MeetingSchedularSystem
     }
 
     private void meetingInitiator_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void RequestMeeting_Load_1(object sender, EventArgs e)
     {
 
     }

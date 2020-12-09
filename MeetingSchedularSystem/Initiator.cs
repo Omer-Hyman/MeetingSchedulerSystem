@@ -6,7 +6,7 @@
     public Initiator(string name) => this.name = name;
 
     public Initiator Name
-      {
+    {
       get; set;
     }
   }
