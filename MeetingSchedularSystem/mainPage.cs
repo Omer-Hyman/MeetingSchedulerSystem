@@ -16,7 +16,7 @@ namespace MeetingSchedularSystem
     {
       InitializeComponent();
       
-      helloUser.Text += initiator;//meeting initiator
+      initiatorLabel.Text += initiator;//meeting initiator
       switchUser.Text = "Not " + initiator + "? Switch User";
 
     }
@@ -28,7 +28,7 @@ namespace MeetingSchedularSystem
 
     private void newMeeting_Click(object sender, EventArgs e)
     {
-      Form newMeeting = new RequestMeeting();
+      Form newMeeting = new RequestMeeting(initiatorLabel.Text);
       newMeeting.Show();
     }
 

@@ -38,6 +38,7 @@
       this.listView1 = new System.Windows.Forms.ListView();
       this.pendingMeetingsLabel = new System.Windows.Forms.Label();
       this.scheduledMeetingsLabel = new System.Windows.Forms.Label();
+      this.initiatorLabel = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // viewSets
@@ -135,11 +136,21 @@
       this.scheduledMeetingsLabel.TabIndex = 6;
       this.scheduledMeetingsLabel.Text = "Scheduled Meetings:";
       // 
+      // initiatorLabel
+      // 
+      this.initiatorLabel.AutoSize = true;
+      this.initiatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.initiatorLabel.Location = new System.Drawing.Point(161, 74);
+      this.initiatorLabel.Name = "initiatorLabel";
+      this.initiatorLabel.Size = new System.Drawing.Size(0, 32);
+      this.initiatorLabel.TabIndex = 10;
+      // 
       // mainPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(420, 540);
+      this.ClientSize = new System.Drawing.Size(466, 540);
+      this.Controls.Add(this.initiatorLabel);
       this.Controls.Add(this.listView2);
       this.Controls.Add(this.listView1);
       this.Controls.Add(this.pendingMeetingsLabel);
@@ -167,5 +178,6 @@
     private System.Windows.Forms.Label pendingMeetingsLabel;
     private System.Windows.Forms.Label scheduledMeetingsLabel;
     public System.Windows.Forms.Button newMeeting;
+    private System.Windows.Forms.Label initiatorLabel;
   }
 }

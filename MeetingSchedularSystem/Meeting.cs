@@ -31,15 +31,14 @@ namespace MeetingSchedularSystem
     private DateTime startDate;
     private DateTime endDate;
     private HashSet<Personas> personas;
-
-    // additionals, some to be added later
+    private string[] guests = new string[5];
     private string[] equipment = new string[5];
+    private string[] location = new string[5];
     private string description;
-    private string location;
     private UserType importanceLevel;
     private string status = "Request";
 
-    public Meeting(Initiator initiator, DateTime date, DateTime startDate, DateTime endDate, string[] equipment, string description, string location)
+    public Meeting(Initiator initiator, DateTime date, DateTime startDate, DateTime endDate, string[] equipment, string description, string[] location)
     {
       // constructor
       this.initiator = initiator;
@@ -64,16 +63,6 @@ namespace MeetingSchedularSystem
       this.startDate = startDate;
       this.endDate = endDate;
     }
-
-    public void setStatus(string status) => this.status = status;
-    public string getStatus() => this.status;
-
-    public void addPersona(Personas persona) => this.personas.Add(persona);
-    public List<MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
-    public DateTime getStartDate() => this.startDate;
-    public DateTime getEndDate() => this.endDate;
-
-
     public MeetingSlot findTopMS()
     {
       DateTime firstTime = this.startDate;
@@ -117,7 +106,43 @@ namespace MeetingSchedularSystem
 
 
     }
-    
+
+    public void setStatus(string status) => this.status = status;
+    public string getStatus() => this.status;
+    public void addPersona(Personas persona) => this.personas.Add(persona);
+    public List<MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
+
+    public DateTime getStartDate() => this.startDate;
+    public DateTime getEndDate() => this.endDate;
+    public DateTime sDate
+    {
+      get { return startDate; }
+      set { startDate = value; }
+    }
+   
+    public DateTime eDate
+    {
+      get { return endDate; }
+      set { endDate = value; }
+    }
+    public String[] Guests
+    {
+      get {
+        return guests;
+      }
+      set
+      {
+        guests = value;
+      }
+    }
+
+    public String[] Location
+    {
+      get { return location; }
+      set { location = value; }
+    }
+
+
     public String[] Equipment
     {
       get

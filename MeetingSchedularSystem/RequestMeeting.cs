@@ -5,10 +5,10 @@ namespace MeetingSchedularSystem
 {
   public partial class RequestMeeting : Form
   {
-    public RequestMeeting()
+    public RequestMeeting(string initiator)
     {
       InitializeComponent();
-      
+      initiatorLabel.Text = initiator + ", Please input meeting details.";
     }
 
     private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -54,16 +54,18 @@ namespace MeetingSchedularSystem
         newMeeting.Equipment[i] = equipmentList.CheckedItems[i].ToString();//equipment
       }
 
-      //newMeeting.Date = datePicker.Value; //date
-
-      /*for (int i = 0; i < guestList.CheckedItems.Count; i++)
+      for (int i = 0; i < guestList.CheckedItems.Count; i++)
       {
         newMeeting.Guests[i] = guestList.CheckedItems[i].ToString();//guests
       }
-*/
 
-      //importance level - attached to personas
-      //location
+      for (int i = 0; i < locationList.CheckedItems.Count; i++)
+      {
+        newMeeting.Location[i] = locationList.CheckedItems[i].ToString();//guests
+      }
+
+      newMeeting.sDate = startDate.Value;//date
+      newMeeting.eDate = endDate.Value;//date
 
     }
 
