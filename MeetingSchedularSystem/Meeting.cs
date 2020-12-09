@@ -4,26 +4,6 @@ using System.Linq;
 
 namespace MeetingSchedularSystem
 {
-  //Omer's class
-
-  /*  class Meeting
-    {
-      public string MeetingInitiator { get; set; }
-      public string Date { get; set; }
-      public string Time { get; set; }
-      public string[] Guests { get; set; }
-      public string[] Equipment { get; set; }
-      public string MeetingDescription { get; set; }
-
-      private string meetingIniator;
-      private string date;
-      private string time;
-      private string[] guests;
-      private string[] equipment;
-      private string meetingDescrption;
-
-    }*/
-
   internal class Meeting
   {
     // basic attributes
@@ -46,12 +26,10 @@ namespace MeetingSchedularSystem
       this.endDate = endDate;
       this.personaCollection = new HashSet<Personas>();
       //this.location = location;
-
    }
 
-        public void setStatus(string status) => this.status = status;
+    public void setStatus(string status) => this.status = status;
     public string getStatus() => this.status;
-
     public void addPersona(Personas persona) => this.personaCollection.Add(persona);
     public List<MeetingSlot> GetAvailableMS() => new List<MeetingSlot>();
     public DateTime getStartDate() => this.startDate;

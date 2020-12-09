@@ -12,25 +12,28 @@ namespace MeetingSchedularSystem
 {
   public partial class mainPage : Form
   {
-    public mainPage(string initiator)
+    
+    public mainPage(Initiator initiator)
     {
       InitializeComponent();
       
-      helloUser.Text += initiator;//meeting initiator
-      switchUser.Text = "Not " + initiator + "? Switch User";
-
+      helloUser.Text += initiator.Name;//meeting initiator
+      switchUser.Text = "Not " + initiator.Name + "? Switch User";
+        
     }
+
+   
 
     private void mainPage_Load(object sender, EventArgs e)
     {
       
     }
-
     private void newMeeting_Click(object sender, EventArgs e)
     {
       Form newMeeting = new RequestMeeting();
       newMeeting.Show();
     }
+
 
 
     private void viewSets_Click(object sender, EventArgs e)
@@ -41,8 +44,8 @@ namespace MeetingSchedularSystem
 
     private void meetingHistory_Click(object sender, EventArgs e)
     {
-      /*Form history = new meetingHistory(); // can't find MeetingHistory for some reason - maybe bc it's a partail class?
-      history.Show();*/
+      Form history = new MeetingHistory(); // can't find MeetingHistory for some reason - maybe bc it's a partail class?
+      history.Show();
     }
 
     private void helloUser_Click(object sender, EventArgs e)

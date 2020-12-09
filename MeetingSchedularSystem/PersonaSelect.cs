@@ -19,59 +19,22 @@ namespace MeetingSchedularSystem
     {
       return this.Text;
     }
-    private void user5_Click(object sender, EventArgs e)
-    {
-      this.Hide();
-      initiator();
-      Form meetingRequest = new RequestMeeting();
-      meetingRequest.Show();
-    }
-
-    private void user1_Click(object sender, EventArgs e)
-    {
-      this.Hide();
-
-      Form meetingRequest = new RequestMeeting();
-      meetingRequest.Show();
-
-    }
-
-    private void user3_Click(object sender, EventArgs e)
-    {
-      this.Hide();
-      //newMeeting.initiator = "Heather McLean";
-      Form meetingRequest = new RequestMeeting();
-      meetingRequest.Show();
-    }
-
-    private void user4_Click(object sender, EventArgs e)
-    {
-      this.Hide();
-      //newMeeting.initiator = "Liam Williams";
-      Form meetingRequest = new RequestMeeting();
-      meetingRequest.Show();
-    }
-
-    private void user2_Click(object sender, EventArgs e)
-    {
-      this.Hide();
-      //newMeeting.initiator = "Sam Scott";
-      Form meetingRequest = new RequestMeeting();
-      meetingRequest.Show();
-    }
 
     private void personaList_SelectedIndexChanged(object sender, EventArgs e)
     {
-      Form main = new mainPage(personaList.SelectedItem.ToString());
+      Initiator Initiator = new Initiator(personaList.SelectedItem.ToString());
+      Form main = new mainPage(Initiator);
       this.Hide();
       main.Show();
+
+/*      //This only for persona/meeting initiator initialisation
       switch (this.Text)
       {
         case "Liam Williams":
 
           // persona instance 1: Liam
           Personas persona1 = new Personas("Liam Williams", 5, true);
-          /*try
+          try
           {
             this.fillPersonaSet(persona1, "preference", this.liam_preferenceSet.Text);
           }
@@ -80,7 +43,7 @@ namespace MeetingSchedularSystem
             check = false;
             TextBox liamResult = this.liamResult;
             liamResult.Text = liamResult.Text + ex.Message + "\n";
-          }*/
+          }
           break;
         case "Sam Scott":
 
@@ -91,9 +54,7 @@ namespace MeetingSchedularSystem
         case "Heather McLean":
 
           break;
-      }
-
-
+      }*/
     }
 
     private void userSelectLabel_Click(object sender, EventArgs e)

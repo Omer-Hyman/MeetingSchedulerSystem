@@ -96,7 +96,7 @@ namespace MeetingSchedularSystem
       // UI components, set values
       try
       {
-                this.meeting = new Meeting(new Initiator(this.meetingInitiator.Text.Trim()), startDate, endDate);// location);
+        this.meeting = new Meeting(new Initiator(this.meetingInitiator.Text.Trim()), startDate, endDate);// location);
         foreach (Personas persona in this.GetPersonas())
           this.meeting.addPersona(persona);
         try

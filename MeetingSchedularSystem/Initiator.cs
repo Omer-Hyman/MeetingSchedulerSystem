@@ -1,10 +1,13 @@
 ﻿namespace MeetingSchedularSystem
 {
-  class Initiator
+  public class Initiator
   {
-    public string name;
+    private string name;
     public Initiator(string name) => this.name = name;
 
-
+    public Initiator Name
+      {
+      get; set;
+    }
   }
 }
