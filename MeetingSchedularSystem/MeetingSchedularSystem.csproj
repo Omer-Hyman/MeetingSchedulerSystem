@@ -64,7 +64,6 @@
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Location.cs" />
     <Compile Include="Meeting.cs" />
     <Compile Include="MSlotException.cs" />
     <Compile Include="newESet.cs">
