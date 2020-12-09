@@ -16,6 +16,7 @@ namespace MeetingSchedularSystem
         private TextBox meetingInitiator;
         private TextBox dateStart;
         private TextBox dateEnd;
+        //private TextBox locationBox;
         // possibly a better UI way with this
         private TextBox liamResult;
         private TextBox liam_preferenceSet;
@@ -87,7 +88,7 @@ namespace MeetingSchedularSystem
             // UI components, set values
             try
             {
-                this.meeting = new Meeting(new Initiator(this.meetingInitiator.Text.Trim()), startDate, endDate);
+                this.meeting = new Meeting(new Initiator(this.meetingInitiator.Text.Trim()), startDate, endDate); //location);
                 foreach (Personas persona in this.GetPersonas())
                     this.meeting.addPersona(persona);
                 try
@@ -98,6 +99,7 @@ namespace MeetingSchedularSystem
                     this.meetingDate.Text = topSlot.date.ToShortDateString();
                     // slot no
                     this.meetingSlotNo.Text = "Slot " + topSlot.ID.ToString();
+                    //this.location.Text = "Location " + topSlot.location.ToString();
                     int num = (int)MessageBox.Show("Meeting slot has been found: \n" + topSlot.ToString());
                     // explain to the users what slot numbers actually mean - i.e. what date ranges they translate to
                     // expand no of slots to 6
@@ -137,7 +139,7 @@ namespace MeetingSchedularSystem
             {
                 this.meeting.setStatus("Participant error");
                 this.meetingErrors.Text = er.Message;
-                int num = (int)MessageBox.Show(er.Message, "Participants Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                int num = (int)MessageBox.Show(er.Message, "Personas Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             if (this.meeting == null || !(this.meetingStatus.Text != "Error initiating meeting"))
                 return;
@@ -147,7 +149,7 @@ namespace MeetingSchedularSystem
         private List<Personas> GetPersonas()
         {
             List<Personas> personaList = new List<Personas>();
-            this.rx = new Regex("(\\d{1,2})/(\\d{1,2})/(\\d{4}) Slot (\\d)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            this.rx = new Regex("(\\d{1,2})/(\\d{1,2})/(\\d{4}) Slot (\\d) Room (\\d)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
             // regex would go here if we can't figure out a better way
             // had to do it for one of thoose placement assessment things so be reyt
@@ -270,12 +272,13 @@ namespace MeetingSchedularSystem
             {
                 GroupCollection groups = match.Groups;
                 // ALSO COMPARE LOCATIONS, EQUIPMENT HERE
+                string location = groups[5].Value;
                 DateTime dateTime = new DateTime(int.Parse(groups[3].Value), int.Parse(groups[2].Value), int.Parse(groups[1].Value));
                 if (DateTime.Compare(dateTime, this.meeting.getStartDate()) < 0)
                     throw new MSlotException(match.ToString() + " (" + (setType == "preference" ? "pref" : "exc") + ") is before the minimum date of the meeting.", persona); // improve, text changes
                 if (DateTime.Compare(dateTime, this.meeting.getEndDate()) > 0)
                     throw new MSlotException(match.ToString() + " (" + (setType == "preference" ? "pref" : "exc") + ") is after the maximum date of the meeting.", persona);
-                MeetingSlot meetingSlot = new MeetingSlot(dateTime, int.Parse(groups[4].Value));
+                MeetingSlot meetingSlot = new MeetingSlot(dateTime, int.Parse(groups[5].Value), location);
                 if (setType == "preference")
                     persona.addToPSet(meetingSlot);
                 else
@@ -341,6 +344,7 @@ namespace MeetingSchedularSystem
             this.submitMeetingButton = new System.Windows.Forms.Button();
             this.meetingInitiator = new System.Windows.Forms.TextBox();
             this.dateStart = new System.Windows.Forms.TextBox();
+            //this.locationBox = new TextBox();
             this.dateEnd = new System.Windows.Forms.TextBox();
             this.liam_preferenceSet = new System.Windows.Forms.TextBox();
             this.liam_exclusionSet = new System.Windows.Forms.TextBox();
@@ -381,6 +385,7 @@ namespace MeetingSchedularSystem
             this.submitMeetingButton.UseVisualStyleBackColor = true;
             this.submitMeetingButton.Click += new System.EventHandler(this.submitMeetingButton_Click);
             // 
+
             // meetingInitiator
             // 
             this.meetingInitiator.Location = new System.Drawing.Point(24, 58);
@@ -399,6 +404,14 @@ namespace MeetingSchedularSystem
             this.dateStart.TabIndex = 3;
             this.dateStart.Text = "01/01/2021";
             // 
+
+            // locationBox
+            //this.locationBox.Location = new Point(190, 138);
+            //this.locationBox.Margin = new Padding(6);
+            //this.locationBox.Name = "locationBox";
+            //this.locationBox.Size = new Size(156, 31);
+            //this.locationBox.TabIndex = 4;
+            //this.locationBox.Text = "";
             // dateEnd
             // 
             this.dateEnd.Location = new System.Drawing.Point(24, 219);
@@ -416,7 +429,7 @@ namespace MeetingSchedularSystem
             this.liam_preferenceSet.Name = "liam_preferenceSet";
             this.liam_preferenceSet.Size = new System.Drawing.Size(396, 112);
             this.liam_preferenceSet.TabIndex = 8;
-            this.liam_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
+            this.liam_preferenceSet.Text = "01/01/2021 Slot 1 Room 1\r\n01/01/2021 Slot 2 Room 1";
             // 
             // liam_exclusionSet
             // 
@@ -426,7 +439,7 @@ namespace MeetingSchedularSystem
             this.liam_exclusionSet.Name = "liam_exclusionSet";
             this.liam_exclusionSet.Size = new System.Drawing.Size(396, 112);
             this.liam_exclusionSet.TabIndex = 10;
-            this.liam_exclusionSet.Text = "02/01/2021 Slot 1\r\n02/01/2021 Slot 2";
+            this.liam_exclusionSet.Text = "02/01/2021 Slot 1 Room 1\r\n02/01/2021 Slot 2 Room 2";
             // 
             // sam_exclusionSet
             // 
@@ -436,7 +449,7 @@ namespace MeetingSchedularSystem
             this.sam_exclusionSet.Name = "sam_exclusionSet";
             this.sam_exclusionSet.Size = new System.Drawing.Size(396, 112);
             this.sam_exclusionSet.TabIndex = 15;
-            this.sam_exclusionSet.Text = "02/01/2021 Slot 1\r\n02/01/2021 Slot 2";
+            this.sam_exclusionSet.Text = "02/01/2021 Slot 1 Room 2\r\n02/01/2021 Slot 2 Room 2";
             // 
             // sam_preferenceSet
             // 
@@ -446,7 +459,7 @@ namespace MeetingSchedularSystem
             this.sam_preferenceSet.Name = "sam_preferenceSet";
             this.sam_preferenceSet.Size = new System.Drawing.Size(396, 112);
             this.sam_preferenceSet.TabIndex = 13;
-            this.sam_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
+            this.sam_preferenceSet.Text = "01/01/2021 Slot 1 Room 1\r\n01/01/2021 Slot 2 Room 1";
             // 
             // rosalia_exclusionSet
             // 
@@ -456,7 +469,7 @@ namespace MeetingSchedularSystem
             this.rosalia_exclusionSet.Name = "rosalia_exclusionSet";
             this.rosalia_exclusionSet.Size = new System.Drawing.Size(396, 112);
             this.rosalia_exclusionSet.TabIndex = 20;
-            this.rosalia_exclusionSet.Text = "02/01/2021 Slot 1\r\n02/01/2021 Slot 2";
+            this.rosalia_exclusionSet.Text = "02/01/2021 Slot 1 Room 2\r\n02/01/2021 Slot 2 Room 2";
             // 
             // rosalia_preferenceSet
             // 
@@ -466,27 +479,27 @@ namespace MeetingSchedularSystem
             this.rosalia_preferenceSet.Name = "rosalia_preferenceSet";
             this.rosalia_preferenceSet.Size = new System.Drawing.Size(396, 112);
             this.rosalia_preferenceSet.TabIndex = 18;
-            this.rosalia_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
+            this.rosalia_preferenceSet.Text = "01/01/2021 Slot 1 Room 1\r\n01/01/2021 Slot 2 Room 1";
             // 
             // heather_exclusionSet
             // 
-            this.heather_exclusionSet.Location = new System.Drawing.Point(1344, 481);
+            this.heather_exclusionSet.Location = new System.Drawing.Point(1344, 673);
             this.heather_exclusionSet.Margin = new System.Windows.Forms.Padding(6);
             this.heather_exclusionSet.Multiline = true;
             this.heather_exclusionSet.Name = "heather_exclusionSet";
             this.heather_exclusionSet.Size = new System.Drawing.Size(396, 112);
             this.heather_exclusionSet.TabIndex = 25;
-            this.heather_exclusionSet.Text = "02/01/2021 Slot 1\r\n02/01/2021 Slot 2";
+            this.heather_exclusionSet.Text = "02/01/2021 Slot 1 Room 2\r\n02/01/2021 Room 2 Slot 2";
             // 
             // heather_preferenceSet
             // 
-            this.heather_preferenceSet.Location = new System.Drawing.Point(1344, 673);
+            this.heather_preferenceSet.Location = new System.Drawing.Point(1344, 481);
             this.heather_preferenceSet.Margin = new System.Windows.Forms.Padding(6);
             this.heather_preferenceSet.Multiline = true;
             this.heather_preferenceSet.Name = "heather_preferenceSet";
             this.heather_preferenceSet.Size = new System.Drawing.Size(396, 112);
             this.heather_preferenceSet.TabIndex = 23;
-            this.heather_preferenceSet.Text = "01/01/2021 Slot 1\r\n01/01/2021 Slot 2";
+            this.heather_preferenceSet.Text = "01/01/2021 Slot 1 Room 1\r\n01/01/2021 Slot 2 Room 1";
             // 
             // label6
             // 
@@ -532,20 +545,20 @@ namespace MeetingSchedularSystem
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(406, 31);
-            this.label25.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label25.Location = new Point(406, 31);
+            this.label25.Margin = new Padding(6, 0, 6, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(140, 25);
+            this.label25.Size = new Size(140, 25);
             this.label25.TabIndex = 51;
             this.label25.Text = "Meeting Date";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(12, 123);
-            this.label26.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label26.Location = new Point(12, 123);
+            this.label26.Margin = new Padding(6, 0, 6, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(70, 25);
+            this.label26.Size = new Size(70, 25);
             this.label26.TabIndex = 55;
             this.label26.Text = "Errors";
             // 
@@ -679,6 +692,7 @@ namespace MeetingSchedularSystem
             this.Controls.Add(this.rosalia_exclusionSet);
             this.Controls.Add(this.rosalia_preferenceSet);
             this.Controls.Add(this.sam_exclusionSet);
+            //this.Controls.Add(locationBox);
             this.Controls.Add(this.sam_preferenceSet);
             this.Controls.Add(this.liam_exclusionSet);
             this.Controls.Add(this.liam_preferenceSet);

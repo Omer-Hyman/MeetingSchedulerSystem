@@ -77,6 +77,7 @@ namespace MeetingSchedularSystem
     public SchedulerUI() => this.InitializeComponent();
     private void button1_Click(object sender, EventArgs e)
     {
+      string location = "";
 
       string[] dateStart = this.dateStart.Text.Split('/');
       string[] dateEnd = this.dateEnd.Text.Split('/');
@@ -95,7 +96,7 @@ namespace MeetingSchedularSystem
       // UI components, set values
       try
       {
-        this.meeting = new Meeting(new Initiator(this.meetingInitiator.Text.Trim()), startDate, endDate);
+                this.meeting = new Meeting(new Initiator(this.meetingInitiator.Text.Trim()), startDate, endDate);// location);
         foreach (Personas persona in this.GetPersonas())
           this.meeting.addPersona(persona);
         try
@@ -106,7 +107,7 @@ namespace MeetingSchedularSystem
           this.meetingDate.Text = topSlot.date.ToShortDateString();
                     // slot no
           this.meetingSlotNo.Text = "Slot " + topSlot.ID.ToString();
-          int num = (int)MessageBox.Show("Meeting slot has been found: \n" + topSlot.ToString());
+          int num = (int)MessageBox.Show("Meeting slot has been found: \n" + topSlot.ToString() + ""+location+"");
            // explain to the users what slot numbers actually mean - i.e. what date ranges they translate to
            // expand no of slots to 6
            // and also time
@@ -279,11 +280,12 @@ namespace MeetingSchedularSystem
         GroupCollection groups = match.Groups;
         // ALSO COMPARE LOCATIONS, EQUIPMENT HERE
         DateTime dateTime = new DateTime(int.Parse(groups[3].Value), int.Parse(groups[2].Value), int.Parse(groups[1].Value));
+         string location = "";
         if (DateTime.Compare(dateTime, this.meeting.getStartDate()) < 0)
           throw new MSlotException(match.ToString() + " (" + (setType == "preference" ? "pref" : "exc") + ") is before the minimum date of the meeting.", persona); // improve, text changes
         if (DateTime.Compare(dateTime, this.meeting.getEndDate()) > 0)
           throw new MSlotException(match.ToString() + " (" + (setType == "preference" ? "pref" : "exc") + ") is after the maximum date of the meeting.", persona);
-        MeetingSlot meetingSlot = new MeetingSlot(dateTime, int.Parse(groups[4].Value));
+        MeetingSlot meetingSlot = new MeetingSlot(dateTime, int.Parse(groups[4].Value), location);
         if (setType == "preference")
           persona.addToPSet(meetingSlot);
         else
