@@ -6,26 +6,24 @@ namespace MeetingSchedularSystem
 {
   internal class Meeting
   {
-    // basic attributes
+    // basic attributes that every meeting needs.
     private Initiator initiator;
     private DateTime startDate;
     private DateTime endDate;
     private HashSet<Personas> personaCollection;
-
-    // additionals, some to be added later
-    private string[] equipment = new string[5];
-    private string description;
-    //private string location;
-    private UserType importanceLevel;
+    private string equipment;
+    private string location;
     private string status = "Request";
 
-    public Meeting(Initiator initiator, DateTime startDate, DateTime endDate) //string location)
+        // the constructor for a Meeting
+    public Meeting(Initiator initiator, DateTime startDate, DateTime endDate, string location, string equipment) //string location)
     {
       this.startDate = DateTime.Compare(endDate, startDate) >= 0 ? startDate : throw new DateRangeError("End date cannot be before start date when arranging a meeting.");
       this.initiator = initiator;
       this.endDate = endDate;
       this.personaCollection = new HashSet<Personas>();
-      //this.location = location;
+      this.location = location;
+      this.equipment = equipment;
    }
 
     public void setStatus(string status) => this.status = status;
@@ -35,18 +33,17 @@ namespace MeetingSchedularSystem
     public DateTime getStartDate() => this.startDate;
     public DateTime getEndDate() => this.endDate;
 
-    //public string getLocation() => this.location;
-
+    public string getLocation() => this.location;
+    public string getEquipment() => this.equipment;
     public MeetingSlot findTopMS()
     {
       DateTime firstTime = this.startDate;
-     // string location = this.location;
+      string location = this.location;
       int number_of_slot = 1;
       // generic logic, we'll implement our own, better version
       HashSet<MeetingSlot> first = new HashSet<MeetingSlot>();
       HashSet<MeetingSlot> source = new HashSet<MeetingSlot>();
       HashSet<MeetingSlot> MS_Set = new HashSet<MeetingSlot>();
-         string location = "room1";
       for (; DateTime.Compare(firstTime, this.endDate) <= 0; firstTime = firstTime.AddDays(1.0))
       {// can also change number of slots
         for (; number_of_slot <= 4; ++number_of_slot)
@@ -88,3 +85,23 @@ namespace MeetingSchedularSystem
   }
 
 }
+
+//Omer's class
+
+/*  class Meeting
+  {
+    public string MeetingInitiator { get; set; }
+    public string Date { get; set; }
+    public string Time { get; set; }
+    public string[] Guests { get; set; }
+    public string[] Equipment { get; set; }
+    public string MeetingDescription { get; set; }
+
+    private string meetingIniator;
+    private string date;
+    private string time;
+    private string[] guests;
+    private string[] equipment;
+    private string meetingDescrption;
+
+  }*/

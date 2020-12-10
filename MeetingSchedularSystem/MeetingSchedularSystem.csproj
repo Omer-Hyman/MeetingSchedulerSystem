@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateRangeError.cs" />
+    <Compile Include="EquipmentException.cs" />
     <Compile Include="Initiator.cs" />
+    <Compile Include="LocationException.cs" />
     <Compile Include="mainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,9 +63,6 @@
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="MS.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Meeting.cs" />
     <Compile Include="MSlotException.cs" />
     <Compile Include="newESet.cs">
@@ -104,9 +103,6 @@
     </Compile>
     <Compile Include="StrongConflictError.cs" />
     <Compile Include="WeakConflictError.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="mainPage.resx">
       <DependentUpon>mainPage.cs</DependentUpon>
     </EmbeddedResource>
