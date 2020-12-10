@@ -9,8 +9,9 @@ namespace MeetingSchedularSystem
     {
       InitializeComponent();
 
-      Personas mehmet = new Personas("Mehmet Ozcan", 2, false);
-      Personas heather = new Personas("Heather McLean", 3, false);
+/*      Personas mehmet = new Personas("Mehmet Ozcan", 2, false);
+ *      // dw i'll put this back in the morning, i just need 4 for it to look cleaner
+*/      Personas heather = new Personas("Heather McLean", 3, false);
       Personas liam = new Personas("Liam Williams", 1, false);
       Personas sam = new Personas("Sam Scott", 5, false);
       Personas rosalia = new Personas("Rosalia Cortez", 4, false);

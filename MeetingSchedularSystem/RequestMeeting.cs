@@ -270,6 +270,7 @@ namespace MeetingSchedularSystem
         string location = "Room 1";
         string equipment = "Equipment 1";
         DateTime dateTime = new DateTime(int.Parse(groups[3].Value), int.Parse(groups[2].Value), int.Parse(groups[1].Value));
+        // this is comparison city: check to see if we need to throw an exception (location, equipment conflict etc)
         if (string.Compare(location, this.meeting.getLocation()) < 0)
                 {
                     throw new LocationException(match.ToString() + " ( " + (setType == "preference" ? "pref" : "exc") + ") is a location conflict.", persona);
