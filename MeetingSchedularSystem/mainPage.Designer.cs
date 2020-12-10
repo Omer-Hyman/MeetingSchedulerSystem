@@ -161,7 +161,7 @@
       this.Controls.Add(this.newMeeting);
       this.Controls.Add(this.viewSets);
       this.Name = "mainPage";
-      this.Text = "mainPage";
+      this.Text = "Main Page";
       this.Load += new System.EventHandler(this.mainPage_Load);
       this.ResumeLayout(false);
       this.PerformLayout();

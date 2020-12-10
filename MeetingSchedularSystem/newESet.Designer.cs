@@ -62,7 +62,7 @@
       this.ESetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ESetLabel.Location = new System.Drawing.Point(24, 29);
       this.ESetLabel.Name = "ESetLabel";
-      this.ESetLabel.Size = new System.Drawing.Size(510, 31);
+      this.ESetLabel.Size = new System.Drawing.Size(408, 25);
       this.ESetLabel.TabIndex = 23;
       this.ESetLabel.Text = "please input date range for your exclusion set.";
       // 
@@ -100,7 +100,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(901, 297);
+      this.ClientSize = new System.Drawing.Size(616, 248);
       this.Controls.Add(this.doneButton);
       this.Controls.Add(this.endDateLabel);
       this.Controls.Add(this.startDateLabel);
@@ -108,7 +108,7 @@
       this.Controls.Add(this.dateTimePicker1);
       this.Controls.Add(this.datePicker);
       this.Name = "newESet";
-      this.Text = "newESet";
+      this.Text = "New Exclusion Set";
       this.ResumeLayout(false);
       this.PerformLayout();
 

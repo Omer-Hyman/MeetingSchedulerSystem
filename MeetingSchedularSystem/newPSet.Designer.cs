@@ -62,7 +62,7 @@
       this.PSetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.PSetLabel.Location = new System.Drawing.Point(23, 22);
       this.PSetLabel.Name = "PSetLabel";
-      this.PSetLabel.Size = new System.Drawing.Size(526, 31);
+      this.PSetLabel.Size = new System.Drawing.Size(421, 25);
       this.PSetLabel.TabIndex = 28;
       this.PSetLabel.Text = "Please input date range for your preference set.";
       this.PSetLabel.Click += new System.EventHandler(this.PSetLabel_Click);
@@ -109,7 +109,7 @@
       this.Controls.Add(this.dateTimePicker1);
       this.Controls.Add(this.datePicker);
       this.Name = "newPSet";
-      this.Text = "newPSet";
+      this.Text = "New Preference Set";
       this.Load += new System.EventHandler(this.newPSet_Load);
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -46,6 +46,12 @@ namespace MeetingSchedularSystem
     private Label label26;
     private Label equipmentTitle;
     private Label locationTitle;
+    private Label liamLabel;
+    private Label samLabel;
+    private Label rosaliaLabel;
+    private Label heatherLabel;
+    private Label endDate;
+    private Label startDate;
     private Label meetingSlot;
     public RequestMeeting(string initiator)
     {
@@ -346,413 +352,483 @@ namespace MeetingSchedularSystem
     }
     private void InitializeComponent()
     {
-            this.submitMeetingButton = new System.Windows.Forms.Button();
-            this.meetingInitiator = new System.Windows.Forms.TextBox();
-            this.dateStart = new System.Windows.Forms.TextBox();
-            this.dateEnd = new System.Windows.Forms.TextBox();
-            this.locationRequest = new System.Windows.Forms.TextBox();
-            this.locationTitle = new Label();
-            this.equipmentBox = new System.Windows.Forms.TextBox();
-            this.liam_preferenceSet = new System.Windows.Forms.TextBox();
-            this.liam_exclusionSet = new System.Windows.Forms.TextBox();
-            this.sam_exclusionSet = new System.Windows.Forms.TextBox();
-            this.sam_preferenceSet = new System.Windows.Forms.TextBox();
-            this.rosalia_exclusionSet = new System.Windows.Forms.TextBox();
-            this.rosalia_preferenceSet = new System.Windows.Forms.TextBox();
-            this.heather_exclusionSet = new System.Windows.Forms.TextBox();
-            this.heather_preferenceSet = new System.Windows.Forms.TextBox();
-            this.initLabel = new Label();
-            this.label6 = new Label();
-            this.label20 = new Label();
-            this.label22 = new Label();
-            this.label23 = new Label();
-            this.label24 = new Label();
-            this.label25 = new Label();
-            this.label26 = new Label();
-            this.meetingDetails = new System.Windows.Forms.GroupBox();
-            this.meetingErrors = new System.Windows.Forms.TextBox();
-            this.meetingSlot = new System.Windows.Forms.Label();
-            this.meetingSlotNo = new System.Windows.Forms.TextBox();
-            this.meetingDate = new System.Windows.Forms.TextBox();
-            this.meetingStatus = new System.Windows.Forms.TextBox();
-            this.liamResult = new System.Windows.Forms.TextBox();
-            this.samResult = new System.Windows.Forms.TextBox();
-            this.heatherResult = new System.Windows.Forms.TextBox();
-            this.rosaliaResult = new System.Windows.Forms.TextBox();
-
-            this.equipmentTitle = new Label();
-   
-            this.meetingDetails.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // submitMeetingButton
-            // 
-            this.submitMeetingButton.Location = new System.Drawing.Point(24, 281);
-            this.submitMeetingButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.submitMeetingButton.Name = "submitMeetingButton";
-            this.submitMeetingButton.Size = new System.Drawing.Size(302, 80);
-            this.submitMeetingButton.TabIndex = 0;
-            this.submitMeetingButton.Text = "Setup Meeting";
-            this.submitMeetingButton.UseVisualStyleBackColor = true;
-            this.submitMeetingButton.Click += new System.EventHandler(this.submitMeetingButton_Click);
-            // 
-            // meetingInitiator
-            // 
-            this.meetingInitiator.Location = new System.Drawing.Point(24, 58);
-            this.meetingInitiator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingInitiator.Name = "meetingInitiator";
-            this.meetingInitiator.Size = new System.Drawing.Size(298, 31);
-            this.meetingInitiator.TabIndex = 1;
-            this.meetingInitiator.Text = "Liam Williams";
-            this.meetingInitiator.TextChanged += new System.EventHandler(this.meetingInitiator_TextChanged);
-            // 
-            // dateStart
-            // 
-            this.dateStart.Location = new System.Drawing.Point(24, 138);
-            this.dateStart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(156, 31);
-            this.dateStart.TabIndex = 3;
-            this.dateStart.Text = "01/01/2021";
-            // 
-            // dateEnd
-            // 
-            this.dateEnd.Location = new System.Drawing.Point(24, 219);
-            this.dateEnd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(156, 31);
-            this.dateEnd.TabIndex = 5;
-            this.dateEnd.Text = "03/01/2021";
-            // 
-            // locationRequest
-            // 
-            this.locationRequest.Location = new System.Drawing.Point(250, 138);
-            this.locationRequest.Margin = new System.Windows.Forms.Padding(6);
-            this.locationRequest.Name = "locationRequest";
-            this.locationRequest.Size = new System.Drawing.Size(156, 31);
-            this.locationRequest.TabIndex = 4;
-            this.locationRequest.Text = "Room 1";
-            // locationTitle
-            this.locationTitle.Location = new Point(250, 107);
-            this.locationTitle.Margin = new Padding(6);
-            this.locationTitle.Name = "locationTitle";
-            this.locationTitle.Size = new Size(140, 31);
-            this.locationTitle.TabIndex = 70;
-            this.locationTitle.Text = "Location";
-            // equipmentTitle
-            this.equipmentTitle.Location = new Point(250, 189);
-            this.equipmentTitle.Margin = new Padding(6);
-            this.equipmentTitle.Name = "equipmentTitle";
-            this.equipmentTitle.Size = new Size(140, 31);
-            this.equipmentTitle.TabIndex = 70;
-            this.equipmentTitle.Text = "Equipment";
-            // initLabel
-            this.initLabel.Location = new Point(24, 30);
-            this.initLabel.Margin = new Padding(6);
-            this.initLabel.Size = new Size(140, 31);
-            this.initLabel.Name = "initLabel";
-            this.initLabel.TabIndex = 69;
-            this.initLabel.Text = "Initiator";
-            // equipmentBox
-            // 
-            this.equipmentBox.Location = new System.Drawing.Point(250, 219);
-            this.equipmentBox.Margin = new System.Windows.Forms.Padding(6);
-            this.equipmentBox.Name = "equipmentBox";
-            this.equipmentBox.Size = new System.Drawing.Size(356, 31);
-            this.equipmentBox.TabIndex = 5;
-            this.equipmentBox.Text = "Equipment 1";
-            // liam_preferenceSet
-            // 
-            this.liam_preferenceSet.Location = new System.Drawing.Point(24, 481);
-            this.liam_preferenceSet.Margin = new System.Windows.Forms.Padding(6);
-            this.liam_preferenceSet.Multiline = true;
-            this.liam_preferenceSet.Name = "liam_preferenceSet";
-            this.liam_preferenceSet.Size = new System.Drawing.Size(396, 112);
-            this.liam_preferenceSet.TabIndex = 8;
-            this.liam_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
-            // 
-            // liam_exclusionSet
-            // 
-            this.liam_exclusionSet.Location = new System.Drawing.Point(24, 673);
-            this.liam_exclusionSet.Margin = new System.Windows.Forms.Padding(6);
-            this.liam_exclusionSet.Multiline = true;
-            this.liam_exclusionSet.Name = "liam_exclusionSet";
-            this.liam_exclusionSet.Size = new System.Drawing.Size(396, 112);
-            this.liam_exclusionSet.TabIndex = 10;
-            this.liam_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
-            // 
-            // sam_exclusionSet
-            // 
-            this.sam_exclusionSet.Location = new System.Drawing.Point(464, 673);
-            this.sam_exclusionSet.Margin = new System.Windows.Forms.Padding(6);
-            this.sam_exclusionSet.Multiline = true;
-            this.sam_exclusionSet.Name = "sam_exclusionSet";
-            this.sam_exclusionSet.Size = new System.Drawing.Size(396, 112);
-            this.sam_exclusionSet.TabIndex = 15;
-            this.sam_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
-            // 
-            // sam_preferenceSet
-            // 
-            this.sam_preferenceSet.Location = new System.Drawing.Point(464, 481);
-            this.sam_preferenceSet.Margin = new System.Windows.Forms.Padding(6);
-            this.sam_preferenceSet.Multiline = true;
-            this.sam_preferenceSet.Name = "sam_preferenceSet";
-            this.sam_preferenceSet.Size = new System.Drawing.Size(396, 112);
-            this.sam_preferenceSet.TabIndex = 13;
-            this.sam_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
-            // 
-            // rosalia_exclusionSet
-            // 
-            this.rosalia_exclusionSet.Location = new System.Drawing.Point(904, 673);
-            this.rosalia_exclusionSet.Margin = new System.Windows.Forms.Padding(6);
-            this.rosalia_exclusionSet.Multiline = true;
-            this.rosalia_exclusionSet.Name = "rosalia_exclusionSet";
-            this.rosalia_exclusionSet.Size = new System.Drawing.Size(396, 112);
-            this.rosalia_exclusionSet.TabIndex = 20;
-            this.rosalia_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
-            // 
-            // rosalia_preferenceSet
-            // 
-            this.rosalia_preferenceSet.Location = new System.Drawing.Point(904, 481);
-            this.rosalia_preferenceSet.Margin = new System.Windows.Forms.Padding(6);
-            this.rosalia_preferenceSet.Multiline = true;
-            this.rosalia_preferenceSet.Name = "rosalia_preferenceSet";
-            this.rosalia_preferenceSet.Size = new System.Drawing.Size(396, 112);
-            this.rosalia_preferenceSet.TabIndex = 18;
-            this.rosalia_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
-            // 
-            // heather_exclusionSet
-            // 
-            this.heather_exclusionSet.Location = new System.Drawing.Point(1344, 673);
-            this.heather_exclusionSet.Margin = new System.Windows.Forms.Padding(6);
-            this.heather_exclusionSet.Multiline = true;
-            this.heather_exclusionSet.Name = "heather_exclusionSet";
-            this.heather_exclusionSet.Size = new System.Drawing.Size(396, 112);
-            this.heather_exclusionSet.TabIndex = 25;
-            this.heather_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
-            // 
-            // heather_preferenceSet
-            // 
-            this.heather_preferenceSet.Location = new System.Drawing.Point(1344, 481);
-            this.heather_preferenceSet.Margin = new System.Windows.Forms.Padding(6);
-            this.heather_preferenceSet.Multiline = true;
-            this.heather_preferenceSet.Name = "heather_preferenceSet";
-            this.heather_preferenceSet.Size = new System.Drawing.Size(396, 112);
-            this.heather_preferenceSet.TabIndex = 23;
-            this.heather_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Exclusion Set";
-            // 
-            // label20
-            // 
-            this.label20.Location = new System.Drawing.Point(0, 0);
-            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(200, 44);
-            this.label20.TabIndex = 46;
-
-            // 
-            // label22
-            // 
-            this.label22.Location = new System.Drawing.Point(0, 0);
-            this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(200, 44);
-            this.label22.TabIndex = 45;
-            // label23
-            // 
-            this.label23.Location = new System.Drawing.Point(0, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(100, 23);
-            this.label23.TabIndex = 0;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(12, 31);
-            this.label24.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 25);
-            this.label24.TabIndex = 49;
-            this.label24.Text = "Status";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(406, 31);
-            this.label25.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(140, 25);
-            this.label25.TabIndex = 51;
-            this.label25.Text = "Meeting Date";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(12, 123);
-            this.label26.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(70, 25);
-            this.label26.TabIndex = 55;
-            this.label26.Text = "Errors";
-            // 
-            // meetingDetails
-            // 
-            this.meetingDetails.Controls.Add(this.label26);
-            this.meetingDetails.Controls.Add(this.meetingErrors);
-            this.meetingDetails.Controls.Add(this.meetingSlot);
-            this.meetingDetails.Controls.Add(this.meetingSlotNo);
-            this.meetingDetails.Controls.Add(this.label25);
-            this.meetingDetails.Controls.Add(this.meetingDate);
-            this.meetingDetails.Controls.Add(this.label24);
-            this.meetingDetails.Controls.Add(this.meetingStatus);
-            this.meetingDetails.Location = new System.Drawing.Point(464, 1058);
-            this.meetingDetails.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingDetails.Name = "meetingDetails";
-            this.meetingDetails.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingDetails.Size = new System.Drawing.Size(1172, 212);
-            this.meetingDetails.TabIndex = 32;
-            this.meetingDetails.TabStop = false;
-            this.meetingDetails.Text = "Meeting Details";
-            // 
-            // meetingErrors
-            // 
-            this.meetingErrors.Location = new System.Drawing.Point(18, 155);
-            this.meetingErrors.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingErrors.Name = "meetingErrors";
-            this.meetingErrors.ReadOnly = true;
-            this.meetingErrors.Size = new System.Drawing.Size(1112, 31);
-            this.meetingErrors.TabIndex = 54;
-            this.meetingErrors.Text = "No Errors";
-            // 
-            // meetingSlot
-            // 
-            this.meetingSlot.AutoSize = true;
-            this.meetingSlot.Location = new System.Drawing.Point(780, 31);
-            this.meetingSlot.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.meetingSlot.Name = "meetingSlot";
-            this.meetingSlot.Size = new System.Drawing.Size(132, 25);
-            this.meetingSlot.TabIndex = 53;
-            this.meetingSlot.Text = "Meeting Slot";
-            // 
-            // meetingSlotNo
-            // 
-            this.meetingSlotNo.Location = new System.Drawing.Point(786, 62);
-            this.meetingSlotNo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingSlotNo.Name = "meetingSlotNo";
-            this.meetingSlotNo.ReadOnly = true;
-            this.meetingSlotNo.Size = new System.Drawing.Size(344, 31);
-            this.meetingSlotNo.TabIndex = 52;
-            this.meetingSlotNo.Text = "Not Planned";
-            // 
-            // meetingDate
-            // 
-            this.meetingDate.Location = new System.Drawing.Point(406, 62);
-            this.meetingDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingDate.Name = "meetingDate";
-            this.meetingDate.ReadOnly = true;
-            this.meetingDate.Size = new System.Drawing.Size(344, 31);
-            this.meetingDate.TabIndex = 50;
-            this.meetingDate.Text = "Not Planned";
-            // 
-            // meetingStatus
-            // 
-            this.meetingStatus.Location = new System.Drawing.Point(18, 62);
-            this.meetingStatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.meetingStatus.Name = "meetingStatus";
-            this.meetingStatus.ReadOnly = true;
-            this.meetingStatus.Size = new System.Drawing.Size(344, 31);
-            this.meetingStatus.TabIndex = 48;
-            this.meetingStatus.Text = "Not Planned";
-            // 
-            // liamResult
-            // 
-            this.liamResult.Location = new System.Drawing.Point(24, 866);
-            this.liamResult.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.liamResult.Multiline = true;
-            this.liamResult.Name = "liamResult";
-            this.liamResult.ReadOnly = true;
-            this.liamResult.Size = new System.Drawing.Size(396, 73);
-            this.liamResult.TabIndex = 38;
-            this.liamResult.Text = "N/A";
-            this.liamResult.TextChanged += new System.EventHandler(this.liamResult_TextChanged);
-            // 
-            // samResult
-            // 
-            this.samResult.Location = new System.Drawing.Point(464, 866);
-            this.samResult.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.samResult.Multiline = true;
-            this.samResult.Name = "samResult";
-            this.samResult.ReadOnly = true;
-            this.samResult.Size = new System.Drawing.Size(396, 73);
-            this.samResult.TabIndex = 40;
-            this.samResult.Text = "N/A";
-            this.samResult.TextChanged += new System.EventHandler(this.samResult_TextChanged);
-            // 
-            // heatherResult
-            // 
-            this.heatherResult.Location = new System.Drawing.Point(1344, 866);
-            this.heatherResult.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.heatherResult.Multiline = true;
-            this.heatherResult.Name = "heatherResult";
-            this.heatherResult.ReadOnly = true;
-            this.heatherResult.Size = new System.Drawing.Size(396, 73);
-            this.heatherResult.TabIndex = 44;
-            this.heatherResult.Text = "N/A";
-            // 
-            // rosaliaResult
-            // 
-            this.rosaliaResult.Location = new System.Drawing.Point(904, 866);
-            this.rosaliaResult.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.rosaliaResult.Multiline = true;
-            this.rosaliaResult.Name = "rosaliaResult";
-            this.rosaliaResult.ReadOnly = true;
-            this.rosaliaResult.Size = new System.Drawing.Size(396, 73);
-            this.rosaliaResult.TabIndex = 42;
-            this.rosaliaResult.Text = "N/A";
-            // 
-            // RequestMeeting
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2880, 1800);
-            this.Controls.Add(this.heatherResult);
-            this.Controls.Add(this.rosaliaResult);
-            this.Controls.Add(this.samResult);
-            this.Controls.Add(this.liamResult);
-            this.Controls.Add(this.meetingDetails);
-            this.Controls.Add(this.heather_exclusionSet);
-            this.Controls.Add(this.heather_preferenceSet);
-            this.Controls.Add(this.rosalia_exclusionSet);
-            this.Controls.Add(this.rosalia_preferenceSet);
-            this.Controls.Add(this.sam_exclusionSet);
-            this.Controls.Add(this.sam_preferenceSet);
-            this.Controls.Add(this.liam_exclusionSet);
-            this.Controls.Add(this.liam_preferenceSet);
-            this.Controls.Add(this.dateEnd);
-            this.Controls.Add(this.dateStart);
-            this.Controls.Add(this.meetingInitiator);
-            this.Controls.Add(this.submitMeetingButton);
-            this.Controls.Add(this.equipmentTitle);
-            this.Controls.Add(this.equipmentBox);
-            this.Controls.Add(this.locationRequest);
-            this.Controls.Add(this.locationTitle);
-            this.Controls.Add(this.initLabel);
-  
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "RequestMeeting";
-            this.Text = "Meeting Scheduler System";
-            this.Load += new System.EventHandler(this.RequestMeeting_Load_1);
-            this.meetingDetails.ResumeLayout(false);
-            this.meetingDetails.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+      this.submitMeetingButton = new System.Windows.Forms.Button();
+      this.meetingInitiator = new System.Windows.Forms.TextBox();
+      this.dateStart = new System.Windows.Forms.TextBox();
+      this.dateEnd = new System.Windows.Forms.TextBox();
+      this.locationRequest = new System.Windows.Forms.TextBox();
+      this.locationTitle = new System.Windows.Forms.Label();
+      this.equipmentBox = new System.Windows.Forms.TextBox();
+      this.liam_preferenceSet = new System.Windows.Forms.TextBox();
+      this.liam_exclusionSet = new System.Windows.Forms.TextBox();
+      this.sam_exclusionSet = new System.Windows.Forms.TextBox();
+      this.sam_preferenceSet = new System.Windows.Forms.TextBox();
+      this.rosalia_exclusionSet = new System.Windows.Forms.TextBox();
+      this.rosalia_preferenceSet = new System.Windows.Forms.TextBox();
+      this.heather_exclusionSet = new System.Windows.Forms.TextBox();
+      this.heather_preferenceSet = new System.Windows.Forms.TextBox();
+      this.initLabel = new System.Windows.Forms.Label();
+      this.label6 = new System.Windows.Forms.Label();
+      this.label20 = new System.Windows.Forms.Label();
+      this.label22 = new System.Windows.Forms.Label();
+      this.label23 = new System.Windows.Forms.Label();
+      this.label24 = new System.Windows.Forms.Label();
+      this.label25 = new System.Windows.Forms.Label();
+      this.label26 = new System.Windows.Forms.Label();
+      this.meetingDetails = new System.Windows.Forms.GroupBox();
+      this.meetingErrors = new System.Windows.Forms.TextBox();
+      this.meetingSlot = new System.Windows.Forms.Label();
+      this.meetingSlotNo = new System.Windows.Forms.TextBox();
+      this.meetingDate = new System.Windows.Forms.TextBox();
+      this.meetingStatus = new System.Windows.Forms.TextBox();
+      this.liamResult = new System.Windows.Forms.TextBox();
+      this.samResult = new System.Windows.Forms.TextBox();
+      this.heatherResult = new System.Windows.Forms.TextBox();
+      this.rosaliaResult = new System.Windows.Forms.TextBox();
+      this.equipmentTitle = new System.Windows.Forms.Label();
+      this.liamLabel = new System.Windows.Forms.Label();
+      this.samLabel = new System.Windows.Forms.Label();
+      this.rosaliaLabel = new System.Windows.Forms.Label();
+      this.heatherLabel = new System.Windows.Forms.Label();
+      this.endDate = new System.Windows.Forms.Label();
+      this.startDate = new System.Windows.Forms.Label();
+      this.meetingDetails.SuspendLayout();
+      this.SuspendLayout();
+      // 
+      // submitMeetingButton
+      // 
+      this.submitMeetingButton.Location = new System.Drawing.Point(476, 197);
+      this.submitMeetingButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.submitMeetingButton.Name = "submitMeetingButton";
+      this.submitMeetingButton.Size = new System.Drawing.Size(201, 51);
+      this.submitMeetingButton.TabIndex = 0;
+      this.submitMeetingButton.Text = "Setup Meeting";
+      this.submitMeetingButton.UseVisualStyleBackColor = true;
+      this.submitMeetingButton.Click += new System.EventHandler(this.submitMeetingButton_Click);
+      // 
+      // meetingInitiator
+      // 
+      this.meetingInitiator.Location = new System.Drawing.Point(572, 32);
+      this.meetingInitiator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingInitiator.Name = "meetingInitiator";
+      this.meetingInitiator.Size = new System.Drawing.Size(135, 22);
+      this.meetingInitiator.TabIndex = 1;
+      this.meetingInitiator.Text = "Liam Williams";
+      this.meetingInitiator.TextChanged += new System.EventHandler(this.meetingInitiator_TextChanged);
+      // 
+      // dateStart
+      // 
+      this.dateStart.Location = new System.Drawing.Point(572, 62);
+      this.dateStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.dateStart.Name = "dateStart";
+      this.dateStart.Size = new System.Drawing.Size(135, 22);
+      this.dateStart.TabIndex = 3;
+      this.dateStart.Text = "01/01/2021";
+      // 
+      // dateEnd
+      // 
+      this.dateEnd.Location = new System.Drawing.Point(572, 94);
+      this.dateEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.dateEnd.Name = "dateEnd";
+      this.dateEnd.Size = new System.Drawing.Size(135, 22);
+      this.dateEnd.TabIndex = 5;
+      this.dateEnd.Text = "03/01/2021";
+      // 
+      // locationRequest
+      // 
+      this.locationRequest.Location = new System.Drawing.Point(440, 154);
+      this.locationRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.locationRequest.Name = "locationRequest";
+      this.locationRequest.Size = new System.Drawing.Size(105, 22);
+      this.locationRequest.TabIndex = 4;
+      this.locationRequest.Text = "Room 1";
+      // 
+      // locationTitle
+      // 
+      this.locationTitle.Location = new System.Drawing.Point(437, 122);
+      this.locationTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.locationTitle.Name = "locationTitle";
+      this.locationTitle.Size = new System.Drawing.Size(93, 20);
+      this.locationTitle.TabIndex = 70;
+      this.locationTitle.Text = "Location:";
+      // 
+      // equipmentBox
+      // 
+      this.equipmentBox.Location = new System.Drawing.Point(569, 154);
+      this.equipmentBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.equipmentBox.Name = "equipmentBox";
+      this.equipmentBox.Size = new System.Drawing.Size(138, 22);
+      this.equipmentBox.TabIndex = 5;
+      this.equipmentBox.Text = "Equipment 1";
+      // 
+      // liam_preferenceSet
+      // 
+      this.liam_preferenceSet.Location = new System.Drawing.Point(16, 308);
+      this.liam_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.liam_preferenceSet.Multiline = true;
+      this.liam_preferenceSet.Name = "liam_preferenceSet";
+      this.liam_preferenceSet.Size = new System.Drawing.Size(265, 73);
+      this.liam_preferenceSet.TabIndex = 8;
+      this.liam_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
+      // 
+      // liam_exclusionSet
+      // 
+      this.liam_exclusionSet.Location = new System.Drawing.Point(16, 431);
+      this.liam_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.liam_exclusionSet.Multiline = true;
+      this.liam_exclusionSet.Name = "liam_exclusionSet";
+      this.liam_exclusionSet.Size = new System.Drawing.Size(265, 73);
+      this.liam_exclusionSet.TabIndex = 10;
+      this.liam_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
+      // 
+      // sam_exclusionSet
+      // 
+      this.sam_exclusionSet.Location = new System.Drawing.Point(309, 431);
+      this.sam_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.sam_exclusionSet.Multiline = true;
+      this.sam_exclusionSet.Name = "sam_exclusionSet";
+      this.sam_exclusionSet.Size = new System.Drawing.Size(265, 73);
+      this.sam_exclusionSet.TabIndex = 15;
+      this.sam_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
+      // 
+      // sam_preferenceSet
+      // 
+      this.sam_preferenceSet.Location = new System.Drawing.Point(309, 308);
+      this.sam_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.sam_preferenceSet.Multiline = true;
+      this.sam_preferenceSet.Name = "sam_preferenceSet";
+      this.sam_preferenceSet.Size = new System.Drawing.Size(265, 73);
+      this.sam_preferenceSet.TabIndex = 13;
+      this.sam_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
+      // 
+      // rosalia_exclusionSet
+      // 
+      this.rosalia_exclusionSet.Location = new System.Drawing.Point(603, 431);
+      this.rosalia_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.rosalia_exclusionSet.Multiline = true;
+      this.rosalia_exclusionSet.Name = "rosalia_exclusionSet";
+      this.rosalia_exclusionSet.Size = new System.Drawing.Size(265, 73);
+      this.rosalia_exclusionSet.TabIndex = 20;
+      this.rosalia_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
+      // 
+      // rosalia_preferenceSet
+      // 
+      this.rosalia_preferenceSet.Location = new System.Drawing.Point(603, 308);
+      this.rosalia_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.rosalia_preferenceSet.Multiline = true;
+      this.rosalia_preferenceSet.Name = "rosalia_preferenceSet";
+      this.rosalia_preferenceSet.Size = new System.Drawing.Size(265, 73);
+      this.rosalia_preferenceSet.TabIndex = 18;
+      this.rosalia_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
+      // 
+      // heather_exclusionSet
+      // 
+      this.heather_exclusionSet.Location = new System.Drawing.Point(896, 431);
+      this.heather_exclusionSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.heather_exclusionSet.Multiline = true;
+      this.heather_exclusionSet.Name = "heather_exclusionSet";
+      this.heather_exclusionSet.Size = new System.Drawing.Size(265, 73);
+      this.heather_exclusionSet.TabIndex = 25;
+      this.heather_exclusionSet.Text = "02/01/2021 Slot 1 Room 2 Equipment 2\r\n02/01/2021 Slot 2 Room 2 Equipment 2";
+      // 
+      // heather_preferenceSet
+      // 
+      this.heather_preferenceSet.Location = new System.Drawing.Point(896, 308);
+      this.heather_preferenceSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.heather_preferenceSet.Multiline = true;
+      this.heather_preferenceSet.Name = "heather_preferenceSet";
+      this.heather_preferenceSet.Size = new System.Drawing.Size(265, 73);
+      this.heather_preferenceSet.TabIndex = 23;
+      this.heather_preferenceSet.Text = "01/01/2021 Slot 1 Room 1 Equipment 1\r\n01/01/2021 Slot 2 Room 1 Equipment 1";
+      // 
+      // initLabel
+      // 
+      this.initLabel.Location = new System.Drawing.Point(439, 32);
+      this.initLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.initLabel.Name = "initLabel";
+      this.initLabel.Size = new System.Drawing.Size(82, 20);
+      this.initLabel.TabIndex = 69;
+      this.initLabel.Text = "Initiator:";
+      // 
+      // label6
+      // 
+      this.label6.Location = new System.Drawing.Point(0, 0);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(100, 23);
+      this.label6.TabIndex = 0;
+      this.label6.Text = "Exclusion Set";
+      // 
+      // label20
+      // 
+      this.label20.Location = new System.Drawing.Point(0, 0);
+      this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+      this.label20.Name = "label20";
+      this.label20.Size = new System.Drawing.Size(200, 44);
+      this.label20.TabIndex = 46;
+      // 
+      // label22
+      // 
+      this.label22.Location = new System.Drawing.Point(0, 0);
+      this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+      this.label22.Name = "label22";
+      this.label22.Size = new System.Drawing.Size(200, 44);
+      this.label22.TabIndex = 45;
+      // 
+      // label23
+      // 
+      this.label23.Location = new System.Drawing.Point(0, 0);
+      this.label23.Name = "label23";
+      this.label23.Size = new System.Drawing.Size(100, 23);
+      this.label23.TabIndex = 0;
+      // 
+      // label24
+      // 
+      this.label24.AutoSize = true;
+      this.label24.Location = new System.Drawing.Point(8, 20);
+      this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label24.Name = "label24";
+      this.label24.Size = new System.Drawing.Size(48, 17);
+      this.label24.TabIndex = 49;
+      this.label24.Text = "Status";
+      // 
+      // label25
+      // 
+      this.label25.AutoSize = true;
+      this.label25.Location = new System.Drawing.Point(271, 20);
+      this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label25.Name = "label25";
+      this.label25.Size = new System.Drawing.Size(92, 17);
+      this.label25.TabIndex = 51;
+      this.label25.Text = "Meeting Date";
+      // 
+      // label26
+      // 
+      this.label26.AutoSize = true;
+      this.label26.Location = new System.Drawing.Point(8, 79);
+      this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.label26.Name = "label26";
+      this.label26.Size = new System.Drawing.Size(47, 17);
+      this.label26.TabIndex = 55;
+      this.label26.Text = "Errors";
+      // 
+      // meetingDetails
+      // 
+      this.meetingDetails.Controls.Add(this.label26);
+      this.meetingDetails.Controls.Add(this.meetingErrors);
+      this.meetingDetails.Controls.Add(this.meetingSlot);
+      this.meetingDetails.Controls.Add(this.meetingSlotNo);
+      this.meetingDetails.Controls.Add(this.label25);
+      this.meetingDetails.Controls.Add(this.meetingDate);
+      this.meetingDetails.Controls.Add(this.label24);
+      this.meetingDetails.Controls.Add(this.meetingStatus);
+      this.meetingDetails.Location = new System.Drawing.Point(245, 646);
+      this.meetingDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingDetails.Name = "meetingDetails";
+      this.meetingDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingDetails.Size = new System.Drawing.Size(781, 136);
+      this.meetingDetails.TabIndex = 32;
+      this.meetingDetails.TabStop = false;
+      this.meetingDetails.Text = "Meeting Details";
+      // 
+      // meetingErrors
+      // 
+      this.meetingErrors.Location = new System.Drawing.Point(12, 99);
+      this.meetingErrors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingErrors.Name = "meetingErrors";
+      this.meetingErrors.ReadOnly = true;
+      this.meetingErrors.Size = new System.Drawing.Size(743, 22);
+      this.meetingErrors.TabIndex = 54;
+      this.meetingErrors.Text = "No Errors";
+      // 
+      // meetingSlot
+      // 
+      this.meetingSlot.AutoSize = true;
+      this.meetingSlot.Location = new System.Drawing.Point(520, 20);
+      this.meetingSlot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+      this.meetingSlot.Name = "meetingSlot";
+      this.meetingSlot.Size = new System.Drawing.Size(86, 17);
+      this.meetingSlot.TabIndex = 53;
+      this.meetingSlot.Text = "Meeting Slot";
+      // 
+      // meetingSlotNo
+      // 
+      this.meetingSlotNo.Location = new System.Drawing.Point(524, 40);
+      this.meetingSlotNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingSlotNo.Name = "meetingSlotNo";
+      this.meetingSlotNo.ReadOnly = true;
+      this.meetingSlotNo.Size = new System.Drawing.Size(231, 22);
+      this.meetingSlotNo.TabIndex = 52;
+      this.meetingSlotNo.Text = "Not Planned";
+      // 
+      // meetingDate
+      // 
+      this.meetingDate.Location = new System.Drawing.Point(271, 40);
+      this.meetingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingDate.Name = "meetingDate";
+      this.meetingDate.ReadOnly = true;
+      this.meetingDate.Size = new System.Drawing.Size(231, 22);
+      this.meetingDate.TabIndex = 50;
+      this.meetingDate.Text = "Not Planned";
+      // 
+      // meetingStatus
+      // 
+      this.meetingStatus.Location = new System.Drawing.Point(12, 40);
+      this.meetingStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.meetingStatus.Name = "meetingStatus";
+      this.meetingStatus.ReadOnly = true;
+      this.meetingStatus.Size = new System.Drawing.Size(231, 22);
+      this.meetingStatus.TabIndex = 48;
+      this.meetingStatus.Text = "Not Planned";
+      // 
+      // liamResult
+      // 
+      this.liamResult.Location = new System.Drawing.Point(16, 554);
+      this.liamResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.liamResult.Multiline = true;
+      this.liamResult.Name = "liamResult";
+      this.liamResult.ReadOnly = true;
+      this.liamResult.Size = new System.Drawing.Size(265, 48);
+      this.liamResult.TabIndex = 38;
+      this.liamResult.Text = "N/A";
+      this.liamResult.TextChanged += new System.EventHandler(this.liamResult_TextChanged);
+      // 
+      // samResult
+      // 
+      this.samResult.Location = new System.Drawing.Point(309, 554);
+      this.samResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.samResult.Multiline = true;
+      this.samResult.Name = "samResult";
+      this.samResult.ReadOnly = true;
+      this.samResult.Size = new System.Drawing.Size(265, 48);
+      this.samResult.TabIndex = 40;
+      this.samResult.Text = "N/A";
+      this.samResult.TextChanged += new System.EventHandler(this.samResult_TextChanged);
+      // 
+      // heatherResult
+      // 
+      this.heatherResult.Location = new System.Drawing.Point(896, 554);
+      this.heatherResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.heatherResult.Multiline = true;
+      this.heatherResult.Name = "heatherResult";
+      this.heatherResult.ReadOnly = true;
+      this.heatherResult.Size = new System.Drawing.Size(265, 48);
+      this.heatherResult.TabIndex = 44;
+      this.heatherResult.Text = "N/A";
+      // 
+      // rosaliaResult
+      // 
+      this.rosaliaResult.Location = new System.Drawing.Point(603, 554);
+      this.rosaliaResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.rosaliaResult.Multiline = true;
+      this.rosaliaResult.Name = "rosaliaResult";
+      this.rosaliaResult.ReadOnly = true;
+      this.rosaliaResult.Size = new System.Drawing.Size(265, 48);
+      this.rosaliaResult.TabIndex = 42;
+      this.rosaliaResult.Text = "N/A";
+      // 
+      // equipmentTitle
+      // 
+      this.equipmentTitle.Location = new System.Drawing.Point(569, 126);
+      this.equipmentTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.equipmentTitle.Name = "equipmentTitle";
+      this.equipmentTitle.Size = new System.Drawing.Size(93, 20);
+      this.equipmentTitle.TabIndex = 70;
+      this.equipmentTitle.Text = "Equipment:";
+      // 
+      // liamLabel
+      // 
+      this.liamLabel.AutoSize = true;
+      this.liamLabel.Location = new System.Drawing.Point(13, 277);
+      this.liamLabel.Name = "liamLabel";
+      this.liamLabel.Size = new System.Drawing.Size(151, 17);
+      this.liamLabel.TabIndex = 71;
+      this.liamLabel.Text = "Liam\'s date range sets";
+      // 
+      // samLabel
+      // 
+      this.samLabel.AutoSize = true;
+      this.samLabel.Location = new System.Drawing.Point(306, 277);
+      this.samLabel.Name = "samLabel";
+      this.samLabel.Size = new System.Drawing.Size(149, 17);
+      this.samLabel.TabIndex = 72;
+      this.samLabel.Text = "Sam\'s date range sets";
+      // 
+      // rosaliaLabel
+      // 
+      this.rosaliaLabel.AutoSize = true;
+      this.rosaliaLabel.Location = new System.Drawing.Point(600, 277);
+      this.rosaliaLabel.Name = "rosaliaLabel";
+      this.rosaliaLabel.Size = new System.Drawing.Size(168, 17);
+      this.rosaliaLabel.TabIndex = 73;
+      this.rosaliaLabel.Text = "Rosalia\'s date range sets";
+      // 
+      // heatherLabel
+      // 
+      this.heatherLabel.AutoSize = true;
+      this.heatherLabel.Location = new System.Drawing.Point(893, 277);
+      this.heatherLabel.Name = "heatherLabel";
+      this.heatherLabel.Size = new System.Drawing.Size(172, 17);
+      this.heatherLabel.TabIndex = 74;
+      this.heatherLabel.Text = "Heather\'s date range sets";
+      // 
+      // endDate
+      // 
+      this.endDate.Location = new System.Drawing.Point(437, 94);
+      this.endDate.Margin = new System.Windows.Forms.Padding(4);
+      this.endDate.Name = "endDate";
+      this.endDate.Size = new System.Drawing.Size(127, 20);
+      this.endDate.TabIndex = 75;
+      this.endDate.Text = "End Date Range:";
+      // 
+      // startDate
+      // 
+      this.startDate.Location = new System.Drawing.Point(437, 62);
+      this.startDate.Margin = new System.Windows.Forms.Padding(4);
+      this.startDate.Name = "startDate";
+      this.startDate.Size = new System.Drawing.Size(127, 20);
+      this.startDate.TabIndex = 76;
+      this.startDate.Text = "Start Date Range:";
+      // 
+      // RequestMeeting
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = new System.Drawing.Size(1267, 842);
+      this.Controls.Add(this.startDate);
+      this.Controls.Add(this.endDate);
+      this.Controls.Add(this.heatherLabel);
+      this.Controls.Add(this.rosaliaLabel);
+      this.Controls.Add(this.samLabel);
+      this.Controls.Add(this.liamLabel);
+      this.Controls.Add(this.heatherResult);
+      this.Controls.Add(this.rosaliaResult);
+      this.Controls.Add(this.samResult);
+      this.Controls.Add(this.liamResult);
+      this.Controls.Add(this.meetingDetails);
+      this.Controls.Add(this.heather_exclusionSet);
+      this.Controls.Add(this.heather_preferenceSet);
+      this.Controls.Add(this.rosalia_exclusionSet);
+      this.Controls.Add(this.rosalia_preferenceSet);
+      this.Controls.Add(this.sam_exclusionSet);
+      this.Controls.Add(this.sam_preferenceSet);
+      this.Controls.Add(this.liam_exclusionSet);
+      this.Controls.Add(this.liam_preferenceSet);
+      this.Controls.Add(this.dateEnd);
+      this.Controls.Add(this.dateStart);
+      this.Controls.Add(this.meetingInitiator);
+      this.Controls.Add(this.submitMeetingButton);
+      this.Controls.Add(this.equipmentTitle);
+      this.Controls.Add(this.equipmentBox);
+      this.Controls.Add(this.locationRequest);
+      this.Controls.Add(this.locationTitle);
+      this.Controls.Add(this.initLabel);
+      this.Name = "RequestMeeting";
+      this.Text = "Request Meeting";
+      this.Load += new System.EventHandler(this.RequestMeeting_Load_1);
+      this.meetingDetails.ResumeLayout(false);
+      this.meetingDetails.PerformLayout();
+      this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 

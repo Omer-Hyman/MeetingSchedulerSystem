@@ -84,7 +84,6 @@
       this.personaList.FormattingEnabled = true;
       this.personaList.Items.AddRange(new object[] {
             "Liam Williams",
-            //"Mehmet-Bulent Özcan",
             "Sam Scott",
             "Rosalia Cortez",
             "Heather McLean"});
@@ -127,7 +126,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(577, 407);
+      this.ClientSize = new System.Drawing.Size(578, 401);
       this.Controls.Add(this.eSetLabel);
       this.Controls.Add(this.pSetLabel);
       this.Controls.Add(this.personaList);
@@ -137,7 +136,7 @@
       this.Controls.Add(this.sam_preferenceSet);
       this.Controls.Add(this.liam_preferenceSet);
       this.Name = "PESets";
-      this.Text = "PESets";
+      this.Text = "Preference and Exclusion sets";
       this.ResumeLayout(false);
       this.PerformLayout();
 

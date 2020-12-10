@@ -49,7 +49,6 @@
       this.personaList.FormattingEnabled = true;
       this.personaList.Items.AddRange(new object[] {
             "Liam Williams",
-            //"Mehmet-Bulent Özcan",
             "Sam Scott",
             "Rosalia Cortez",
             "Heather McLean"});
@@ -67,7 +66,7 @@
       this.Controls.Add(this.personaList);
       this.Controls.Add(this.userSelectLabel);
       this.Name = "PersonaSelect";
-      this.Text = "PersonaSelect";
+      this.Text = "Select User";
       this.ResumeLayout(false);
       this.PerformLayout();
 
